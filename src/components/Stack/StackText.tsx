@@ -30,6 +30,7 @@ const TECH = [
     "React Hook Form",
     "Reanimated",
     "React Navigation",
+    "Unit testing",
 ];
 
 const TECH_TITLE = {
@@ -51,6 +52,8 @@ const INSTRUMENTS = [
     "Xcode",
     "Gradle",
     "Expo",
+    "git",
+    "yarn/npm",
 ];
 
 const OTHER = {
