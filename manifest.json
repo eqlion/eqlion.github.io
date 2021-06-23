@@ -2,8 +2,8 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "lang": "en",
-  "name": "new-site",
-  "short_name": "new-site",
+  "name": "Nikolay Lapa",
+  "short_name": "Nikolay Lapa",
   "start_url": "/?utm_source=web_app_manifest",
   "orientation": "portrait",
   "icons": [
