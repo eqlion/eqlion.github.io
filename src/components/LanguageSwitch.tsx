@@ -7,13 +7,11 @@ import Animated, {
     interpolate,
     interpolateColor,
 } from "react-native-reanimated";
-import Text from "./Text";
 
 import { LanguageContext } from "../util/language";
 import useFont from "../hooks/useFont";
 import { COLORS } from "../util/colors";
 
-// const AnimatedText = Animated.createAnimatedComponent(Text);
 
 const LanguageSwitch: FC = () => {
     const { language, changeLanguage } = useContext(LanguageContext);
