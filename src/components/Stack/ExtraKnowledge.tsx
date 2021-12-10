@@ -5,7 +5,6 @@ import Container from "../Container";
 import Text from "../Text";
 
 import { LanguageContext } from "../../util/language";
-import { StyleSheet } from "react-native";
 
 const TITLE = {
     en: "Extra skills",

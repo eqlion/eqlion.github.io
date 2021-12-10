@@ -31,6 +31,10 @@ const TECH = [
     "Reanimated",
     "React Navigation",
     "Unit testing",
+    "JIRA/Confluence",
+    "Git[Hub|Lab]",
+    "i18n",
+    "watermelondb",
 ];
 
 const TECH_TITLE = {
@@ -58,7 +62,15 @@ const INSTRUMENTS = [
 
 const OTHER = {
     ru: "И другие...",
-    en: "And other...",
+    en: "And others...",
+};
+
+const columnStyle = {
+    flex: 1,
+};
+
+const leftColumnStyle = {
+    marginRight: 32,
 };
 
 const StackText: FC = () => {
@@ -69,13 +81,14 @@ const StackText: FC = () => {
         flexDirection: isPhone ? ("column" as const) : ("row" as const),
     };
 
-    const columnStyle = {
-        flex: 1,
-    };
-
     return (
         <View style={containerStyle}>
-            <View style={[styles.column, !isPhone && columnStyle]}>
+            <View
+                style={[
+                    styles.column,
+                    !isPhone && columnStyle,
+                    !isPhone && leftColumnStyle,
+                ]}>
                 <Text>{TECH_TITLE[language]}</Text>
                 <View style={styles.tagContainer}>
                     {TECH.map((tech, index) => (
@@ -117,7 +130,6 @@ const styles = StyleSheet.create({
     tag: {
         textDecorationLine: "underline",
         textDecorationColor: COLORS.blue,
-        textAlign: "center",
     },
     anotherTag: {
         textDecorationLine: "underline",

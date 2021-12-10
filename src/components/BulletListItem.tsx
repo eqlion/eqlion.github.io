@@ -28,8 +28,6 @@ export default BulletListItem;
 
 const styles = StyleSheet.create({
     bullet: {
-        // width: 7,
-        // height: 7,
         borderRadius: 1000,
         backgroundColor: COLORS.white,
         marginRight: 10,

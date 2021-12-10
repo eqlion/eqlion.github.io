@@ -1,5 +1,4 @@
 import React, { FC, useContext } from "react";
-import { StyleSheet } from "react-native";
 
 import DateInfo from "../DateInfo";
 import Text from "../Text";
@@ -9,8 +8,8 @@ import { LanguageContext } from "../../util/language";
 import { parseUrl } from "../../util";
 
 const ABSTRACT = {
-    ru: "Занимаюсь полным циклом разработки приложения: вёрстка, бизнес-логика, сборка и подпись, отправка на тестирование (TestFlight), загрузка в магазины (AppStore, Google Play Store). Некоторые из вещей, с которыми я работал:",
-    en: "I do the whole development cycle: layout, business-logic, building and signing, sending to tests (TestFlight), uploading to the store (AppStore, Google Play Store). Some of the things I've worked on:",
+    ru: "Занимался полным циклом разработки приложения: вёрстка, бизнес-логика, сборка и подпись, отправка на тестирование (TestFlight), загрузка в магазины (AppStore, Google Play Store). Некоторые из вещей, с которыми я работал:",
+    en: "I've done the whole development cycle: layout, business-logic, building and signing, sending to tests (TestFlight), uploading to the store (AppStore, Google Play Store). Some of the things I've worked with:",
 };
 
 const FEATURES = {
@@ -110,7 +109,8 @@ const Sixhands: FC = () => {
         <DateInfo
             place="Sixhands"
             position="Junior/Middle React Native dev"
-            dateStart="07, 2020">
+            dateStart="07, 2020"
+            dateEnd="07, 2021">
             <>
                 <Text>{ABSTRACT[language]}</Text>
                 {FEATURES[language].map(({ text, urls }, index) => (
@@ -134,5 +134,3 @@ const Sixhands: FC = () => {
 };
 
 export default Sixhands;
-
-const styles = StyleSheet.create({});

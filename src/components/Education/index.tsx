@@ -6,7 +6,7 @@ import EducationText from "./EducationText";
 
 const TITLE = {
     ru: "Образование",
-    en: "Educations",
+    en: "Education",
 };
 
 const Education: FC = () => {

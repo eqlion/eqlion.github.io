@@ -1,5 +1,5 @@
-import React, { useState, FC } from "react";
-import { Pressable, Linking, TextProps, StyleSheet } from "react-native";
+import React, { FC } from "react";
+import { TextProps, StyleSheet } from "react-native";
 import { COLORS } from "../util/colors";
 
 import Text from "./Text";
@@ -8,30 +8,19 @@ interface IProps extends TextProps {
     url: string;
 }
 
-const Link: FC<IProps> = ({ url, children, ...props }) => {
-    const [hovered, setHovered] = useState(false);
-    const style = {
-        textDecorationLine: hovered
-            ? ("underline" as const)
-            : ("none" as const),
-        color: COLORS.purple,
-    };
-    return (
-        <Pressable
-            onPress={() => Linking.openURL(url)}
-            onHoverIn={() => setHovered(true)}
-            onHoverOut={() => setHovered(false)}>
-            <Text style={[style, styles.text]} {...props}>
-                {children}
-            </Text>
-        </Pressable>
-    );
-};
+const Link: FC<IProps> = ({ url, children, ...props }) => (
+    <Text
+        {...props}
+        href={url}
+        hrefAttrs={{ target: "blank" }}
+        accessibilityRole="link"
+        style={styles.link}>
+        {children}
+    </Text>
+);
 
 export default Link;
 
 const styles = StyleSheet.create({
-    text: {
-        whiteSpace: "nowrap",
-    },
+    link: { color: COLORS.purple },
 });

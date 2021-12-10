@@ -7,6 +7,10 @@ export type FontWeight = "bold" | "light" | "regular" | "medium";
 
 interface IProps extends TextProps {
     type?: FontWeight;
+    href?: string;
+    hrefAttrs?: {
+        target: string;
+    };
 }
 
 const fontFamily = {
@@ -16,7 +20,7 @@ const fontFamily = {
     medium: "FiraCode_500Medium",
 };
 
-const Text: FC<IProps> = ({ style, type = "regular", children }) => {
+const Text: FC<IProps> = ({ style, type = "regular", children, ...props }) => {
     const fontSize = useFont(13);
     return (
         <DefaultText
@@ -24,7 +28,8 @@ const Text: FC<IProps> = ({ style, type = "regular", children }) => {
                 { fontFamily: fontFamily[type], fontSize },
                 styles.text,
                 style,
-            ]}>
+            ]}
+            {...props}>
             {children}
         </DefaultText>
     );
