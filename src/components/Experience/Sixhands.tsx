@@ -21,7 +21,7 @@ const FEATURES = {
         {
             text: "Локальные и удалённые пуш уведомления — Firebase Cloud Messaging",
             urls: [
-                "https://github.com/notifee/react-native-notifee",
+                "https://github.com/invertase/notifee",
                 "https://github.com/invertase/react-native-firebase",
             ],
         },
@@ -65,7 +65,7 @@ const FEATURES = {
         {
             text: "Local and remote push notifications — Firebase Cloud Messaging",
             urls: [
-                "https://github.com/notifee/react-native-notifee",
+                "https://github.com/invertase/notifee",
                 "https://github.com/invertase/react-native-firebase",
             ],
         },
@@ -108,6 +108,7 @@ const Sixhands: FC = () => {
     return (
         <DateInfo
             place="Sixhands"
+            url="https://sixhands.co/"
             position="Junior/Middle React Native dev"
             dateStart="07, 2020"
             dateEnd="07, 2021">

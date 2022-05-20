@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { View, StyleSheet } from "react-native";
 import { COLORS } from "../util/colors";
+import Link from "./Link";
 
 import Text from "./Text";
 import UnderlinedText from "./UnderlinedText";
@@ -11,6 +12,7 @@ interface IProps {
     place: string;
     position: string;
     stack?: string;
+    url?: string;
 }
 
 const Comma = () => <Text>, </Text>;
@@ -21,16 +23,25 @@ const DateInfo: FC<IProps> = ({
     place,
     position,
     stack,
+    url,
     children,
 }) => (
     <View style={styles.container}>
         <View style={styles.line}>
             <Text>
-                {`(${dateStart}–${dateEnd ? dateEnd : "..."}) `}
+                {`(${dateStart}–${dateEnd ?? "..."}) `}
                 <UnderlinedText color={COLORS.green} style={styles.place}>
                     {place}
                 </UnderlinedText>
                 <Comma />
+                {!!url && (
+                    <>
+                        <Link url={url}>
+                            {url.split("://")[1].replaceAll("/", "")}
+                        </Link>
+                        <Comma />
+                    </>
+                )}
             </Text>
         </View>
         <View style={styles.line}>

@@ -15,7 +15,9 @@ const SberMarket: FC = () => {
     return (
         <DateInfo
             place="SberMarket"
+            url="https://sbermarket.ru/"
             position="Middle React Native dev"
+            dateEnd="04, 2022"
             dateStart="07, 2021">
             <Text>{ABSTRACT[language]}</Text>
         </DateInfo>
