@@ -9,6 +9,10 @@ const getLinks = (language: Language) => {
             return [
                 { url: "https://t.me/eqlion", text: "Telegram" },
                 { url: "mailto:lapanicholas@gmail.com", text: "Email" },
+                {
+                    url: "https://www.linkedin.com/in/nikolay-lapa-6a8607220/",
+                    text: "LinkedIn",
+                },
                 { url: "https://github.com/eqlion/", text: "GitHub" },
                 {
                     url: "https://docs.google.com/document/d/14qcVP1YD6FxWoJvDaR-wYFrcWw29k0doIaFmgudtprk/edit?usp=sharing",
@@ -27,6 +31,10 @@ const getLinks = (language: Language) => {
             return [
                 { url: "https://t.me/eqlion", text: "Telegram" },
                 { url: "mailto:lapanicholas@gmail.com", text: "Email" },
+                {
+                    url: "https://www.linkedin.com/in/nikolay-lapa-6a8607220/",
+                    text: "LinkedIn",
+                },
                 { url: "https://github.com/eqlion/", text: "GitHub" },
                 {
                     url: "https://docs.google.com/document/d/1GqL98NfqAYjFWcPT2Mi3eFsbwC69AOYGHOfukB3ie2I/edit?usp=sharing",
