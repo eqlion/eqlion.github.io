@@ -2,3 +2,4 @@ node_modules
 web-build
 babel.config.js
 .eslintrc.js
+commitlint.config.ts
