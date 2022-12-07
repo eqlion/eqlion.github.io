@@ -1,13 +1,13 @@
-import React, { FC } from "react";
-import { View, StyleSheet, TextStyle, StyleProp } from "react-native";
+import React, { FC, PropsWithChildren } from "react";
+import { View, TextStyle, StyleProp } from "react-native";
 import useFont from "../hooks/useFont";
 import Text from "./Text";
 
-interface IProps {
+type Props = {
     style?: StyleProp<TextStyle>;
-}
+};
 
-const Title: FC<IProps> = ({ children, style }) => {
+const Title: FC<PropsWithChildren<Props>> = ({ children, style }) => {
     const fontSize = useFont(22);
     return (
         <View>
@@ -19,5 +19,3 @@ const Title: FC<IProps> = ({ children, style }) => {
 };
 
 export default Title;
-
-const styles = StyleSheet.create({});

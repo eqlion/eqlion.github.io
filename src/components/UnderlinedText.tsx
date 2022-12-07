@@ -1,20 +1,13 @@
-import React, { useState, FC, useEffect } from "react";
-import {
-    View,
-    TouchableOpacity,
-    StyleSheet,
-    TextStyle,
-    TextProps,
-} from "react-native";
+import React, { FC } from "react";
+import { View, StyleSheet, TextProps } from "react-native";
 import Text, { FontWeight } from "./Text";
 
-interface IProps extends TextProps {
+type Props = {
     color: string;
     type?: FontWeight;
-    style?: TextStyle;
-}
+} & TextProps;
 
-const UnderlinedText: FC<IProps> = ({
+const UnderlinedText: FC<Props> = ({
     color,
     children,
     type,

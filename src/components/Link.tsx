@@ -4,11 +4,11 @@ import { COLORS } from "../util/colors";
 
 import Text from "./Text";
 
-interface IProps extends TextProps {
+type Props = {
     url: string;
-}
+} & TextProps;
 
-const Link: FC<IProps> = ({ url, children, ...props }) => (
+const Link: FC<Props> = ({ url, children, ...props }) => (
     <Text
         {...props}
         href={url}

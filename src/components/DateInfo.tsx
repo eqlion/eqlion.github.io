@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, PropsWithChildren } from "react";
 import { View, StyleSheet } from "react-native";
 import { COLORS } from "../util/colors";
 import Link from "./Link";
@@ -6,18 +6,18 @@ import Link from "./Link";
 import Text from "./Text";
 import UnderlinedText from "./UnderlinedText";
 
-interface IProps {
+type Props = {
     dateStart: string;
     dateEnd?: string;
     place: string;
     position: string;
     stack?: string;
     url?: string;
-}
+};
 
 const Comma = () => <Text>, </Text>;
 
-const DateInfo: FC<IProps> = ({
+const DateInfo: FC<PropsWithChildren<Props>> = ({
     dateStart,
     dateEnd,
     place,
