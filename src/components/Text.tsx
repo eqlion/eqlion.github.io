@@ -5,13 +5,13 @@ import { COLORS } from "../util/colors";
 
 export type FontWeight = "bold" | "light" | "regular" | "medium";
 
-interface IProps extends TextProps {
+type Props = {
     type?: FontWeight;
     href?: string;
     hrefAttrs?: {
         target: string;
     };
-}
+} & TextProps;
 
 const fontFamily = {
     regular: "FiraCode_400Regular",
@@ -20,7 +20,7 @@ const fontFamily = {
     medium: "FiraCode_500Medium",
 };
 
-const Text: FC<IProps> = ({ style, type = "regular", children, ...props }) => {
+const Text: FC<Props> = ({ style, type = "regular", children, ...props }) => {
     const fontSize = useFont(13);
     return (
         <DefaultText

@@ -7,5 +7,7 @@ export const LanguageContext = createContext<{
     changeLanguage: () => void;
 }>({
     language: "en",
-    changeLanguage: () => {},
+    changeLanguage: () => {
+        return;
+    },
 });

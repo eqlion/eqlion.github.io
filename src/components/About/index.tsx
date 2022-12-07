@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect, useContext } from "react";
+import React, { FC, useContext } from "react";
 import { View, StyleSheet } from "react-native";
 import { LanguageContext } from "../../util/language";
 import LanguageSwitch from "../LanguageSwitch";
