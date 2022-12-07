@@ -12,14 +12,13 @@ import { LanguageContext } from "../util/language";
 import useFont from "../hooks/useFont";
 import { COLORS } from "../util/colors";
 
-
 const LanguageSwitch: FC = () => {
     const { language, changeLanguage } = useContext(LanguageContext);
     const node = useSharedValue(language === "en" ? 0 : 1);
 
     useEffect(() => {
         node.value = withTiming(language === "en" ? 0 : 1);
-    }, [language]);
+    }, [language, node]);
 
     const fontSize = useFont(13);
 
