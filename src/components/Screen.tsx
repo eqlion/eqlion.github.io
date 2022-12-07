@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, PropsWithChildren } from "react";
 import { View, StyleSheet } from "react-native";
 import useIsPhone from "../hooks/useIsPhone";
 import { COLORS } from "../util/colors";
 
-const Screen: FC = ({ children }) => {
+const Screen: FC<PropsWithChildren> = ({ children }) => {
     const isPhone = useIsPhone();
     const style = {
         paddingHorizontal: isPhone ? 16 : "27%",

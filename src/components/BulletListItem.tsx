@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect } from "react";
+import React, { useState, FC, useEffect, PropsWithChildren } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import useFont from "../hooks/useFont";
 import { COLORS } from "../util/colors";
@@ -15,7 +15,7 @@ const Bullet = () => {
     );
 };
 
-const BulletListItem: FC = ({ children }) => {
+const BulletListItem: FC<PropsWithChildren> = ({ children }) => {
     return (
         <View style={styles.container}>
             <Bullet />
