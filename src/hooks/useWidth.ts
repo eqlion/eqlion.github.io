@@ -1,4 +1,4 @@
-import { PixelRatio, useWindowDimensions } from "react-native";
+import { PixelRatio, useWindowDimensions } from 'react-native';
 
 export default (w: number) => {
     const { width } = useWindowDimensions();

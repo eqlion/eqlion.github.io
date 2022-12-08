@@ -1,5 +1,5 @@
-import { PixelRatio, useWindowDimensions } from "react-native";
-import useIsPhone from "./useIsPhone";
+import { PixelRatio, useWindowDimensions } from 'react-native';
+import useIsPhone from './useIsPhone';
 
 export default (w: number) => {
     const { width, height } = useWindowDimensions();

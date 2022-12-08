@@ -1,7 +1,7 @@
-import React, { FC, PropsWithChildren } from "react";
-import { View, StyleSheet } from "react-native";
-import useFont from "../hooks/useFont";
-import { COLORS } from "../util/colors";
+import React, { FC, PropsWithChildren } from 'react';
+import { View, StyleSheet } from 'react-native';
+import useFont from '../hooks/useFont';
+import { COLORS } from '../util/colors';
 
 const Bullet = () => {
     const size = useFont(5);
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     container: {
-        flexDirection: "row",
-        width: "100%",
+        flexDirection: 'row',
+        width: '100%',
     },
 });

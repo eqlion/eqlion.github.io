@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import { View } from "react-native";
+import React, { FC } from 'react';
+import { View } from 'react-native';
 
-import Itmo from "./Itmo";
+import Itmo from './Itmo';
 
 const EducationText: FC = () => {
     return (

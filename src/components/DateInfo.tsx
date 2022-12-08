@@ -1,10 +1,10 @@
-import React, { FC, PropsWithChildren } from "react";
-import { View, StyleSheet } from "react-native";
-import { COLORS } from "../util/colors";
-import Link from "./Link";
+import React, { FC, PropsWithChildren } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { COLORS } from '../util/colors';
+import Link from './Link';
 
-import Text from "./Text";
-import UnderlinedText from "./UnderlinedText";
+import Text from './Text';
+import UnderlinedText from './UnderlinedText';
 
 type Props = {
     dateStart: string;
@@ -29,7 +29,7 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
     <View style={styles.container}>
         <View style={styles.line}>
             <Text>
-                {`(${dateStart}–${dateEnd ?? "..."}) `}
+                {`(${dateStart}–${dateEnd ?? '...'}) `}
                 <UnderlinedText color={COLORS.green} style={styles.place}>
                     {place}
                 </UnderlinedText>
@@ -37,7 +37,7 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
                 {!!url && (
                     <>
                         <Link url={url}>
-                            {url.split("://")[1].replaceAll("/", "")}
+                            {url.split('://')[1].replaceAll('/', '')}
                         </Link>
                         <Comma />
                     </>
@@ -65,16 +65,16 @@ export default DateInfo;
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
+        width: '100%',
         marginBottom: 20,
     },
-    line: { flexDirection: "row" },
+    line: { flexDirection: 'row' },
     place: {
-        fontStyle: "italic",
+        fontStyle: 'italic',
     },
     notes: {
-        width: "95%",
-        marginLeft: "5%",
+        width: '95%',
+        marginLeft: '5%',
         marginTop: 10,
     },
 });

@@ -1,19 +1,14 @@
-import React, { FC, useContext } from "react";
-import { View, StyleSheet } from "react-native";
-import { LanguageContext } from "../../util/language";
-import Title from "../Title";
-import EducationText from "./EducationText";
-
-const TITLE = {
-    ru: "Образование",
-    en: "Education",
-};
+import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { View, StyleSheet } from 'react-native';
+import Title from '../Title';
+import EducationText from './EducationText';
 
 const Education: FC = () => {
-    const { language } = useContext(LanguageContext);
+    const { t } = useTranslation();
     return (
         <View style={styles.container}>
-            <Title>{TITLE[language]}</Title>
+            <Title>{t('Education.title')}</Title>
             <EducationText />
         </View>
     );

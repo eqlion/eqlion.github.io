@@ -27,7 +27,7 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off",
         indent: "off",
         "linebreak-style": ["error", "unix"],
-        quotes: ["error", "double"],
+        quotes: ["error", "single"],
         semi: ["error", "always"],
         "react-native/no-unused-styles": 2,
         "react-native/split-platform-components": 2,

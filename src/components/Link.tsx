@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import { TextProps, StyleSheet } from "react-native";
-import { COLORS } from "../util/colors";
+import React, { FC } from 'react';
+import { TextProps, StyleSheet } from 'react-native';
+import { COLORS } from '../util/colors';
 
-import Text from "./Text";
+import Text from './Text';
 
 type Props = {
     url: string;
@@ -12,7 +12,7 @@ const Link: FC<Props> = ({ url, children, ...props }) => (
     <Text
         {...props}
         href={url}
-        hrefAttrs={{ target: "blank" }}
+        hrefAttrs={{ target: 'blank' }}
         accessibilityRole="link"
         style={styles.link}>
         {children}
