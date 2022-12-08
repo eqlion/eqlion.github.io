@@ -8,7 +8,7 @@ import Animated, {
     interpolateColor,
 } from 'react-native-reanimated';
 
-import useFont from '../hooks/useFont';
+import { useFont } from '@hooks';
 import { COLORS } from '../util/colors';
 import { useTranslation } from 'react-i18next';
 
@@ -78,7 +78,7 @@ const LanguageSwitch: FC = () => {
     );
 };
 
-export default LanguageSwitch;
+export { LanguageSwitch };
 
 const styles = StyleSheet.create({
     container: {

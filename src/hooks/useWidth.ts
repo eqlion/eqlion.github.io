@@ -1,6 +1,6 @@
 import { PixelRatio, useWindowDimensions } from 'react-native';
 
-export default (w: number) => {
+export const useWidth = (w: number) => {
     const { width } = useWindowDimensions();
     return PixelRatio.roundToNearestPixel((w * width) / 719);
 };

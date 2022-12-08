@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
 
-import Title from '../Title';
-import ExperienceText from './ExperienceText';
+import { Title } from '@UIKit';
+import { ExperienceText } from './ExperienceText';
 
 const Experience: FC = () => {
     const { t } = useTranslation();
@@ -15,7 +15,7 @@ const Experience: FC = () => {
     );
 };
 
-export default Experience;
+export { Experience };
 
 const styles = StyleSheet.create({
     container: {

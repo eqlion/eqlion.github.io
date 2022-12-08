@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { View, StyleSheet } from 'react-native';
-import useIsPhone from '../hooks/useIsPhone';
+import { useIsPhone } from '../hooks/useIsPhone';
 import { COLORS } from '../util/colors';
 
 const Screen: FC<PropsWithChildren> = ({ children }) => {
@@ -11,7 +11,7 @@ const Screen: FC<PropsWithChildren> = ({ children }) => {
     return <View style={[styles.container, style]}>{children}</View>;
 };
 
-export default Screen;
+export { Screen };
 
 const styles = StyleSheet.create({
     container: {

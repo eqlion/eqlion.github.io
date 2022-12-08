@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from '../components/Link';
-import Text from '../components/Text';
+import { Link, Text } from '../UIKit';
 
 export const parseUrl = (url: string, index: number, last: boolean) => {
     const parts = url.split('/');

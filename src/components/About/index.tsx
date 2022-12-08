@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
-import LanguageSwitch from '../LanguageSwitch';
-import Title from '../Title';
-import AboutText from './About';
+import { LanguageSwitch, Title } from '@UIKit';
+import { AboutText } from './About';
 
 const About: FC = () => {
     const { t } = useTranslation();
@@ -18,7 +17,7 @@ const About: FC = () => {
     );
 };
 
-export default About;
+export { About };
 
 const styles = StyleSheet.create({
     container: {

@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { View, StyleSheet } from 'react-native';
-import useFont from '../hooks/useFont';
+import { useFont } from '@hooks';
 import { COLORS } from '../util/colors';
 
 const Bullet = () => {
@@ -24,7 +24,7 @@ const BulletListItem: FC<PropsWithChildren> = ({ children }) => {
     );
 };
 
-export default BulletListItem;
+export { BulletListItem };
 
 const styles = StyleSheet.create({
     bullet: {

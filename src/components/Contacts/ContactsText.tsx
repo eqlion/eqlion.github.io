@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
-import Link from '../Link';
+import { Link } from '@UIKit';
 
 const LINKS = [
     { url: 'https://t.me/eqlion', text: 'Contacts.telegram' },
-    { url: 'mailto:lapanicholas@gmail.com', text: 'Email' },
+    { url: 'mailto:lapanicholas@gmail.com', text: 'Contacts.email' },
     {
         url: 'https://www.linkedin.com/in/nikolay-lapa-6a8607220/',
         text: 'Contacts.linkedin',
@@ -30,7 +30,7 @@ const ContactsText: FC = () => {
     );
 };
 
-export default ContactsText;
+export { ContactsText };
 
 const styles = StyleSheet.create({
     container: {

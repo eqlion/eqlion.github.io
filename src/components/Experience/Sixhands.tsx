@@ -1,11 +1,8 @@
 import React, { FC } from 'react';
-
-import DateInfo from '../DateInfo';
-import Text from '../Text';
-import BulletListItem from '../BulletListItem';
+import { useTranslation } from 'react-i18next';
 
 import { parseUrl } from '../../util';
-import { useTranslation } from 'react-i18next';
+import { DateInfo, Text, BulletListItem } from '@UIKit';
 
 const FEATURES = [
     {
@@ -81,4 +78,4 @@ const Sixhands: FC = () => {
     );
 };
 
-export default Sixhands;
+export { Sixhands };

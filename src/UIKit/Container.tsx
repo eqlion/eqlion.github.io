@@ -5,7 +5,7 @@ const Container: FC<PropsWithChildren> = ({ children }) => (
     <View style={styles.container}>{children}</View>
 );
 
-export default Container;
+export { Container };
 
 const styles = StyleSheet.create({
     container: {

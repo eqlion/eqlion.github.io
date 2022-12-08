@@ -1,10 +1,10 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { COLORS } from '../util/colors';
-import Link from './Link';
+import { Link } from './Link';
 
-import Text from './Text';
-import UnderlinedText from './UnderlinedText';
+import { Text } from './Text';
+import { UnderlinedText } from './UnderlinedText';
 
 type Props = {
     dateStart: string;
@@ -34,24 +34,24 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
                     {place}
                 </UnderlinedText>
                 <Comma />
-                {!!url && (
+                {url ? (
                     <>
                         <Link url={url}>
                             {url.split('://')[1].replaceAll('/', '')}
                         </Link>
                         <Comma />
                     </>
-                )}
+                ) : null}
             </Text>
         </View>
         <View style={styles.line}>
             <Text>
-                {!!stack && (
+                {stack ? (
                     <>
                         <Text>{stack}</Text>
                         <Comma />
                     </>
-                )}
+                ) : null}
                 <UnderlinedText color={COLORS.peachy} type="bold">
                     {position}
                 </UnderlinedText>
@@ -61,7 +61,7 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
     </View>
 );
 
-export default DateInfo;
+export { DateInfo };
 
 const styles = StyleSheet.create({
     container: {

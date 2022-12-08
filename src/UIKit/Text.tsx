@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text as DefaultText, TextProps } from 'react-native';
-import useFont from '../hooks/useFont';
+import { useFont } from '@hooks';
 import { COLORS } from '../util/colors';
 
 export type FontWeight = 'bold' | 'light' | 'regular' | 'medium';
@@ -35,7 +35,7 @@ const Text: FC<Props> = ({ style, type = 'regular', children, ...props }) => {
     );
 };
 
-export default Text;
+export { Text };
 
 const styles = StyleSheet.create({
     text: {

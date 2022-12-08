@@ -8,13 +8,10 @@ import {
 } from '@expo-google-fonts/fira-code';
 import { Helmet } from 'react-helmet';
 
-import Screen from './src/components/Screen';
-import About from './src/components/About';
-import Education from './src/components/Education';
-import Experience from './src/components/Experience';
+import { Screen } from '@UIKit';
+import { About, Education, Experience, Contacts } from './src/components';
 
 import { COLORS } from './src/util/colors';
-import Contacts from './src/components/Contacts';
 
 import 'intl-pluralrules';
 import './src/i18n';

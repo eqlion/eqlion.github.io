@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
-import Title from '../Title';
-import ContactsText from './ContactsText';
+import { Title } from '@UIKit';
+import { ContactsText } from './ContactsText';
 
 const Contacts: FC = () => {
     const { t } = useTranslation();
@@ -14,7 +14,7 @@ const Contacts: FC = () => {
     );
 };
 
-export default Contacts;
+export { Contacts };
 
 const styles = StyleSheet.create({
     container: {

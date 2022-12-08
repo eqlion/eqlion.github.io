@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import Text from '../Text';
+import { Text } from '@UIKit';
 
 const calcAge = () =>
     new Date(
@@ -12,4 +12,4 @@ const AboutText: FC = () => {
     return <Text>{t('About.text', { age: calcAge() })}</Text>;
 };
 
-export default AboutText;
+export { AboutText };
