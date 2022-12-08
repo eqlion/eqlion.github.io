@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { View, StyleSheet, TextProps } from "react-native";
-import Text, { FontWeight } from "./Text";
+import React, { FC } from 'react';
+import { View, StyleSheet, TextProps } from 'react-native';
+import Text, { FontWeight } from './Text';
 
 type Props = {
     color: string;
@@ -29,7 +29,7 @@ export default UnderlinedText;
 
 const styles = StyleSheet.create({
     underline: {
-        width: "100%",
+        width: '100%',
         height: 2,
     },
 });

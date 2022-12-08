@@ -1,24 +1,35 @@
-import React, { FC, useContext, useEffect } from "react";
-import { Pressable, StyleSheet } from "react-native";
+import React, { FC, useCallback, useEffect } from 'react';
+import { Pressable, StyleSheet } from 'react-native';
 import Animated, {
     useSharedValue,
     useAnimatedStyle,
     withTiming,
     interpolate,
     interpolateColor,
-} from "react-native-reanimated";
+} from 'react-native-reanimated';
 
-import { LanguageContext } from "../util/language";
-import useFont from "../hooks/useFont";
-import { COLORS } from "../util/colors";
+import useFont from '../hooks/useFont';
+import { COLORS } from '../util/colors';
+import { useTranslation } from 'react-i18next';
 
 const LanguageSwitch: FC = () => {
-    const { language, changeLanguage } = useContext(LanguageContext);
-    const node = useSharedValue(language === "en" ? 0 : 1);
+    const {
+        i18n: { changeLanguage, language },
+    } = useTranslation();
+    const isEn = language === 'en';
+    const node = useSharedValue(isEn ? 0 : 1);
 
     useEffect(() => {
-        node.value = withTiming(language === "en" ? 0 : 1);
-    }, [language, node]);
+        node.value = withTiming(isEn ? 0 : 1);
+    }, [isEn, node]);
+
+    const handleChangeLanguage = useCallback(() => {
+        if (isEn) {
+            void changeLanguage('ru');
+        } else {
+            void changeLanguage('en');
+        }
+    }, [changeLanguage, isEn]);
 
     const fontSize = useFont(13);
 
@@ -46,7 +57,7 @@ const LanguageSwitch: FC = () => {
 
     return (
         <Pressable
-            onPress={changeLanguage}
+            onPress={handleChangeLanguage}
             style={[
                 {
                     width: width * 2,
@@ -71,20 +82,20 @@ export default LanguageSwitch;
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     highlight: {
-        backgroundColor: "#ffffff90",
+        backgroundColor: '#ffffff90',
         borderRadius: 10000,
-        position: "absolute",
+        position: 'absolute',
         zIndex: -10,
     },
     flag: {
-        textAlign: "center",
-        textAlignVertical: "center",
+        textAlign: 'center',
+        textAlignVertical: 'center',
         flex: 1,
-        fontFamily: "FiraCode_400Regular",
+        fontFamily: 'FiraCode_400Regular',
     },
 });

@@ -1,7 +1,7 @@
-import React, { FC, PropsWithChildren } from "react";
-import { View, TextStyle, StyleProp } from "react-native";
-import useFont from "../hooks/useFont";
-import Text from "./Text";
+import React, { FC, PropsWithChildren } from 'react';
+import { View, TextStyle, StyleProp } from 'react-native';
+import useFont from '../hooks/useFont';
+import Text from './Text';
 
 type Props = {
     style?: StyleProp<TextStyle>;

@@ -1,17 +1,12 @@
-import React, { useContext } from "react";
-import type { FC } from "react";
-import { LanguageContext } from "../../util/language";
+import React from 'react';
+import type { FC } from 'react';
 
-import DateInfo from "../DateInfo";
-import Text from "../Text";
-
-const ABSTRACT = {
-    ru: "Участвую в разработке мобильного Android приложения: новые фичи, фиксинг багов; код-ревью с командой; участвую в принятии решений о разработке.",
-    en: "Taking part in the development of the Android app: new features, bug-fixing; code-review with the team; taking part in making the decisions regarding development.",
-};
+import DateInfo from '../DateInfo';
+import Text from '../Text';
+import { useTranslation } from 'react-i18next';
 
 const SberMarket: FC = () => {
-    const { language } = useContext(LanguageContext);
+    const { t } = useTranslation();
     return (
         <DateInfo
             place="SberMarket"
@@ -19,7 +14,7 @@ const SberMarket: FC = () => {
             position="Middle React Native dev"
             dateEnd="04, 2022"
             dateStart="07, 2021">
-            <Text>{ABSTRACT[language]}</Text>
+            <Text>{t('Experience.sbermarket')}</Text>
         </DateInfo>
     );
 };
