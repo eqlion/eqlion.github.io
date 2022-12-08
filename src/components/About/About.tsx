@@ -1,15 +1,31 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@UIKit';
+import { View, StyleSheet } from 'react-native';
+import { LanguageSwitch, Title } from '@UIKit';
+import { AboutText } from './AboutText';
 
-const calcAge = () =>
-    new Date(
-        new Date().getTime() - new Date('1999-08-05').getTime(),
-    ).getFullYear() - 1970;
-
-const AboutText: FC = () => {
+const About: FC = () => {
     const { t } = useTranslation();
-    return <Text>{t('About.text', { age: calcAge() })}</Text>;
+    return (
+        <View style={styles.container}>
+            <View style={styles.titleContainer}>
+                <Title>{t('About.title')}</Title>
+                <LanguageSwitch />
+            </View>
+            <AboutText />
+        </View>
+    );
 };
 
-export { AboutText };
+export { About };
+
+const styles = StyleSheet.create({
+    container: {
+        marginBottom: 32,
+    },
+    titleContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+});
