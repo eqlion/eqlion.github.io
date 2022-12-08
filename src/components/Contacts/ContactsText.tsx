@@ -8,7 +8,7 @@ const LINKS = [
     { url: 'mailto:lapanicholas@gmail.com', text: 'Email' },
     {
         url: 'https://www.linkedin.com/in/nikolay-lapa-6a8607220/',
-        text: 'Contacts.linkedIn',
+        text: 'Contacts.linkedin',
     },
     { url: 'https://github.com/eqlion/', text: 'Contacts.github' },
     {
