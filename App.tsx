@@ -7,6 +7,9 @@ import {
     FiraCode_500Medium,
 } from '@expo-google-fonts/fira-code';
 import { Helmet } from 'react-helmet';
+import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+dayjs.extend(customParseFormat);
 
 import { Screen } from '@UIKit';
 import { About, Education, Experience, Contacts } from './src/components';

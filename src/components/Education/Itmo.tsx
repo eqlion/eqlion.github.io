@@ -2,13 +2,14 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { DateInfo, Link, Text } from '@UIKit';
+import dayjs from 'dayjs';
 
 const Itmo: FC = () => {
     const { t } = useTranslation();
     return (
         <DateInfo
-            dateStart="2017"
-            dateEnd="2021"
+            dateStart={dayjs('09, 2017', 'MM, YYYY')}
+            dateEnd={dayjs('07, 2021', 'MM, YYYY')}
             position={t('Education.itmo.position')}
             place={t('Education.itmo.place')}
             stack={t('Education.itmo.stack')}>
