@@ -6,7 +6,7 @@ import { COLORS } from '../util/colors';
 const Screen: FC<PropsWithChildren> = ({ children }) => {
     const isPhone = useIsPhone();
     const style = {
-        paddingHorizontal: isPhone ? 16 : '27%',
+        paddingHorizontal: isPhone ? 16 : '20%',
     };
     return <View style={[styles.container, style]}>{children}</View>;
 };
