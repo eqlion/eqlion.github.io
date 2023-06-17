@@ -1,8 +1,7 @@
 import React from 'react';
 import type { FC } from 'react';
 
-import DateInfo from '../DateInfo';
-import Text from '../Text';
+import { DateInfo, Text } from '@UIKit';
 import { useTranslation } from 'react-i18next';
 
 const SberMarket: FC = () => {
@@ -19,4 +18,4 @@ const SberMarket: FC = () => {
     );
 };
 
-export default SberMarket;
+export { SberMarket };

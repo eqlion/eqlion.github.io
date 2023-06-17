@@ -1,7 +1,7 @@
 import { PixelRatio, useWindowDimensions } from 'react-native';
-import useIsPhone from './useIsPhone';
+import { useIsPhone } from './useIsPhone';
 
-export default (w: number) => {
+export const useFont = (w: number) => {
     const { width, height } = useWindowDimensions();
     const isPhone = useIsPhone();
     return PixelRatio.roundToNearestPixel(

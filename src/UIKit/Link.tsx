@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { TextProps, StyleSheet } from 'react-native';
 import { COLORS } from '../util/colors';
 
-import Text from './Text';
+import { Text } from './Text';
 
 type Props = {
     url: string;
@@ -19,7 +19,7 @@ const Link: FC<Props> = ({ url, children, ...props }) => (
     </Text>
 );
 
-export default Link;
+export { Link };
 
 const styles = StyleSheet.create({
     link: { color: COLORS.purple },

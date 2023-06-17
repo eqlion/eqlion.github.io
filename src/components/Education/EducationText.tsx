@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { View } from 'react-native';
 
-import Itmo from './Itmo';
+import { Itmo } from './Itmo';
 
 const EducationText: FC = () => {
     return (
@@ -11,4 +11,4 @@ const EducationText: FC = () => {
     );
 };
 
-export default EducationText;
+export { EducationText };

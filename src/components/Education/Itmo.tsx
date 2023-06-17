@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import DateInfo from '../DateInfo';
-import Link from '../Link';
-import Text from '../Text';
+import { DateInfo, Link, Text } from '@UIKit';
 
 const Itmo: FC = () => {
     const { t } = useTranslation();
@@ -24,4 +22,4 @@ const Itmo: FC = () => {
     );
 };
 
-export default Itmo;
+export { Itmo };
