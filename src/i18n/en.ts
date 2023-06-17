@@ -2,11 +2,7 @@ export const en = {
     About: {
         title: 'About',
         // eslint-disable-next-line quotes
-        text: "Hey! I'm Nikolay Lapa, $t(About.age, { \"count\": {{age}} }), and i'm a Middle+ React Native developer, which means that I love and know how to create exciting and fast crossplatform mobile apps (and rarely sites too: this site's been created entirely using nothing but React Native!). Below you can find info about my skills, experience, stack and education, and if you want to work with me (or me to work with you), feel free to message me!",
-        age_one: '{{count}}',
-        age_few: '{{count}}',
-        age_many: '{{count}}',
-        age_other: '{{count}}',
+        text: "Hey! I'm Nikolay Lapa, and I'm senior mobile developer, I specialize in React Native with TypeScript and native iOS development using Swift. I have a strong focus on product delivery and enjoy tackling complex UI's, animations, and business-logic. If you are interested in working with me, feel free to message me using the contacts bellow!",
     },
     Contacts: {
         title: 'Contacts && Links',
@@ -29,20 +25,26 @@ export const en = {
     Experience: {
         title: 'Experience',
         sbermarket:
-            'Took part in the development of the Android app: new features, bug-fixing; code-review with the team; took part in making the decisions regarding development.',
+            'Worked in android mobile team, working on delivering various features across the app. Implemented and released BNPL customer payment option in the app, including the UI layout (with complex animations), backend integration, ab-test integration. React Native, Typescript, styled-components, React Navigation, React Native Reanimated 2, custom solutions for app architecture and state-management, module approach, DI',
         sixhands: {
-            // eslint-disable-next-line quotes
-            text: "I've done the whole development cycle: layout, business-logic, building and signing, sending to tests (TestFlight), uploading to the store (AppStore, Google Play Store). Some of the things I've worked with:",
-            bt: 'BlueTooth LE — connecting to accessories via BT, read, write, subscribe to notifications',
-            notifications:
-                'Local and remote push notifications — Firebase Cloud Messaging',
-            firebase:
-                'Designing and using Firebase Cloud Firestore, Cloud Storage, Dynamic Links for the apps without backend',
-            camera: 'Face recognition, 2D face effects',
-            maps: 'Maps (Google, Yandex), clustering, creating and editing markers, polygons and lines',
-            payments: 'Accepting payments via CloudPayments, YooKassa; IAP',
-            animations: 'Smooth (60+ FPS) element animations',
+            text: 'Worked on several outsourced apps at once doing the whole development cycle on my own: layout, business-logic, building and signing, sending to tests (TestFlight), uploading to the store (AppStore, Google Play Store). React Native (bare/managed), TypeScript, react-navigation, react-native-reanimated, redux, hooks',
         },
-        tabby: 'Taking part in the development of the customer app: own, discuss, build and deploy the new features, squash bugs, partake in code review, write tests.',
+        tabby: {
+            ios: 'Transitioned the app RN -> Swift, developed One-time Limit as an extension of the primary limit, added ability to update the National ID inside of the app, ability to link a bank account to improve the credit score. Swift, Combine, UIKit, MVI, Tuist, DI, coordinators/instructors, tests, ab-tests, feature-flags, analytics',
+            reactNative:
+                'Built Tabby Card on mobile: KYC, card issuing, adding card to the Wallet, complex flow with a bunch of entry and possible abandonment points. Built One-time Limit feature: added complexity for the flow, deeplink integration, heavy usage of instructor pattern. TypeScript, native modules, react-navigation, i11n, analytics, ab-tests',
+        },
+    },
+    Util: {
+        showMore: 'Show more',
+        showLess: 'Show less',
+        year_one: '{{count}} year',
+        year_few: '{{count}} years',
+        year_many: '{{count}} years',
+        year_other: '{{count}} years',
+        month_one: '{{count}} month',
+        month_few: '{{count}} months',
+        month_many: '{{count}} months',
+        month_other: '{{count}} months',
     },
 };

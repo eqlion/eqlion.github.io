@@ -1,15 +1,18 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { COLORS } from '../util/colors';
-import { Link } from './Link';
+import dayjs from 'dayjs';
 
+import { Link } from './Link';
 import { Text } from './Text';
 import { UnderlinedText } from './UnderlinedText';
 
+import { COLORS } from '../util/colors';
+import { useTimeDiff } from '../hooks/useTimeDiff';
+
 type Props = {
-    dateStart: string;
-    dateEnd?: string;
-    place: string;
+    dateStart: dayjs.Dayjs;
+    dateEnd?: dayjs.Dayjs;
+    place?: string;
     position: string;
     stack?: string;
     url?: string;
@@ -25,15 +28,21 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
     stack,
     url,
     children,
-}) => (
-    <View style={styles.container}>
-        <View style={styles.line}>
-            <Text>
-                {`(${dateStart}–${dateEnd ?? '...'}) `}
-                <UnderlinedText color={COLORS.green} style={styles.place}>
-                    {place}
-                </UnderlinedText>
-                <Comma />
+}) => {
+    const diff = useTimeDiff(dateStart, dateEnd);
+    return (
+        <View style={styles.container}>
+            <View style={styles.line}>
+                {place ? (
+                    <>
+                        <UnderlinedText
+                            color={COLORS.green}
+                            style={styles.place}>
+                            {place}
+                        </UnderlinedText>
+                        <Comma />
+                    </>
+                ) : null}
                 {url ? (
                     <>
                         <Link url={url}>
@@ -42,24 +51,20 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
                         <Comma />
                     </>
                 ) : null}
-            </Text>
-        </View>
-        <View style={styles.line}>
-            <Text>
-                {stack ? (
-                    <>
-                        <Text>{stack}</Text>
-                        <Comma />
-                    </>
-                ) : null}
+            </View>
+            <View style={[styles.line, styles.secondLine]}>
                 <UnderlinedText color={COLORS.peachy} type="bold">
                     {position}
                 </UnderlinedText>
-            </Text>
+                <Text>{`(${dateStart.format('MM, YYYY')}–${
+                    dateEnd?.format('MM, YYYY') ?? '…'
+                }), ${diff}`}</Text>
+                <Text>{stack ? <Text>{stack}</Text> : null}</Text>
+            </View>
+            <View style={styles.notes}>{children}</View>
         </View>
-        <View style={styles.notes}>{children}</View>
-    </View>
-);
+    );
+};
 
 export { DateInfo };
 
@@ -68,13 +73,18 @@ const styles = StyleSheet.create({
         width: '100%',
         marginBottom: 20,
     },
-    line: { flexDirection: 'row' },
+    line: { flexDirection: 'row', marginBottom: 4 },
     place: {
         fontStyle: 'italic',
     },
     notes: {
         width: '95%',
         marginLeft: '5%',
-        marginTop: 10,
+        marginTop: 8,
+    },
+    secondLine: {
+        marginLeft: '5%',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
     },
 });

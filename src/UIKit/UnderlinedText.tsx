@@ -30,6 +30,6 @@ export { UnderlinedText };
 const styles = StyleSheet.create({
     underline: {
         width: '100%',
-        height: 2,
+        height: 1,
     },
 });

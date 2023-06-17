@@ -17,6 +17,7 @@
     "@expo-google-fonts/fira-code": "^0.1.0",
     "@expo/dev-server": "^0.1.123",
     "@expo/webpack-config": "^0.17.3",
+    "dayjs": "^1.11.8",
     "expo": "^47.0.0",
     "expo-font": "~11.0.1",
     "expo-status-bar": "~1.4.2",
