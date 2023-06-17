@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { View, StyleSheet } from 'react-native';
-import { LanguageSwitch, Title } from '@UIKit';
+import { Title } from '@UIKit';
 import { AboutText } from './AboutText';
 
 const About: FC = () => {
@@ -10,7 +10,6 @@ const About: FC = () => {
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Title>{t('About.title')}</Title>
-                <LanguageSwitch />
             </View>
             <AboutText />
         </View>

@@ -1,3 +1,5 @@
+// Legacy file, not used anymore
+
 export const ru = {
     About: {
         title: 'Про меня',
