@@ -7,7 +7,8 @@
         "noEmit": true,
         "skipLibCheck": true,
         "resolveJsonModule": true,
-        "paths": { "@UIKit": ["./src/UIKit"], "@hooks": ["./src/hooks"] }
+        "paths": { "@UIKit": ["./src/UIKit"], "@hooks": ["./src/hooks"] },
+        "strict": true
     },
     "extends": "expo/tsconfig.base"
 }

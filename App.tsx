@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     useFonts,
     FiraCode_400Regular,
@@ -16,7 +15,6 @@ import { About, Education, Experience, Contacts } from './src/components';
 
 import { COLORS } from './src/util/colors';
 
-import 'intl-pluralrules';
 import './src/i18n';
 
 export default function App() {

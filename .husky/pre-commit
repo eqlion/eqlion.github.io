@@ -1,4 +1,11 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
 
-yarn lint && yarn typescript
+echo "🕙 Running lint..."
+yarn lint-staged
+echo "✅ Lint done!"
+echo "🕙 Running typescript..."
+yarn typescript
+echo "✅ Typescript done!"
+echo "🕙 Running tests..."
+yarn test
+echo "✅ Tests done!"

@@ -1,14 +1,16 @@
-import React, { FC, PropsWithChildren } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { FC, PropsWithChildren } from 'react';
+import { ScrollView, StyleSheet, ViewStyle } from 'react-native';
 import { useIsPhone } from '../hooks/useIsPhone';
 import { COLORS } from '../util/colors';
 
 const Screen: FC<PropsWithChildren> = ({ children }) => {
     const isPhone = useIsPhone();
-    const style = {
+    const style: ViewStyle = {
         paddingHorizontal: isPhone ? 16 : '20%',
     };
-    return <View style={[styles.container, style]}>{children}</View>;
+    return (
+        <ScrollView style={[styles.container, style]}>{children}</ScrollView>
+    );
 };
 
 export { Screen };

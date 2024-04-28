@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { StyleSheet, Text as DefaultText, TextProps } from 'react-native';
 import { useFont } from '@hooks';
 import { COLORS } from '../util/colors';
