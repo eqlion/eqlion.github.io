@@ -6,10 +6,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "deploy": "gh-pages -d web-build",
+    "deploy": "gh-pages -t -d dist",
     "typescript": "tsc --noEmit",
     "lint": "eslint  --ext .js,.ts,.tsx .",
-    "predeploy": "expo build:web",
+    "predeploy": "expo export -p web",
     "prepare": "husky",
     "test": "jest"
   },
