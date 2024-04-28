@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useFont } from '@hooks';
 import { COLORS } from '../util/colors';

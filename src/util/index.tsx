@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, Text } from '../UIKit';
 
 export const parseUrl = (url: string, index: number, last: boolean) => {

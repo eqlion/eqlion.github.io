@@ -1,7 +1,6 @@
 export { BulletListItem } from './BulletListItem';
 export { Container } from './Container';
 export { DateInfo } from './DateInfo';
-export { LanguageSwitch } from './LanguageSwitch';
 export { Link } from './Link';
 export { Screen } from './Screen';
 export { Text } from './Text';

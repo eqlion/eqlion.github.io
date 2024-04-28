@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { View, StyleSheet, TextProps } from 'react-native';
 import { FontWeight, Text } from './Text';
 
