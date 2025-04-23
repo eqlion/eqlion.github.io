@@ -13,6 +13,7 @@ const Itmo: FC = () => {
             position={t('Education.itmo.position')}
             place={t('Education.itmo.place')}
             stack={t('Education.itmo.stack')}>
+            <Text>{t('Education.itmo.gpa')}</Text>
             <Text>
                 <Link url="https://github.com/eqlion/bachelor-diploma">
                     {t('Education.itmo.link')}

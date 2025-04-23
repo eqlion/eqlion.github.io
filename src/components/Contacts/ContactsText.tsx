@@ -12,7 +12,7 @@ const LINKS = [
     },
     { url: 'https://github.com/eqlion/', text: 'Contacts.github' },
     {
-        url: 'https://docs.google.com/document/d/14qcVP1YD6FxWoJvDaR-wYFrcWw29k0doIaFmgudtprk/edit?usp=sharing',
+        url: 'https://drive.google.com/file/d/1JQFFhIhyrkdDLvuk4x0rLBspQDPTeI3x/view?usp=sharing',
         text: 'Contacts.resume',
     },
 ];

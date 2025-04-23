@@ -11,7 +11,13 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 
 import { Screen } from '@UIKit';
-import { About, Education, Experience, Contacts } from './src/components';
+import {
+    About,
+    Education,
+    Experience,
+    Contacts,
+    Buzzwords,
+} from './src/components';
 
 import { COLORS } from './src/util/colors';
 
@@ -36,6 +42,7 @@ export default function App() {
                 <Contacts />
                 <Experience />
                 <Education />
+                <Buzzwords />
             </Screen>
         </>
     );

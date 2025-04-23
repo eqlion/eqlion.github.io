@@ -1,0 +1,1 @@
+export { Buzzwords } from './Buzzwords';
