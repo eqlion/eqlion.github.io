@@ -39,6 +39,6 @@ export { Text };
 
 const styles = StyleSheet.create({
     text: {
-        color: COLORS.white,
+        color: COLORS.text,
     },
 });

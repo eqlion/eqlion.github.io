@@ -22,5 +22,5 @@ const Link: FC<Props> = ({ url, children, ...props }) => (
 export { Link };
 
 const styles = StyleSheet.create({
-    link: { color: COLORS.purple },
+    link: { color: COLORS.link },
 });

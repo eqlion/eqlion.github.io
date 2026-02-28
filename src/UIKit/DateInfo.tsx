@@ -4,7 +4,6 @@ import dayjs from 'dayjs';
 
 import { Link } from './Link';
 import { Text } from './Text';
-import { UnderlinedText } from './UnderlinedText';
 
 import { COLORS } from '../util/colors';
 import { useTimeDiff } from '../hooks/useTimeDiff';
@@ -35,11 +34,9 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
             <View style={styles.line}>
                 {place ? (
                     <>
-                        <UnderlinedText
-                            color={COLORS.green}
-                            style={styles.place}>
+                        <Text style={{ color: COLORS.place, fontStyle: 'italic' }}>
                             {place}
-                        </UnderlinedText>
+                        </Text>
                         <Comma />
                     </>
                 ) : null}
@@ -53,10 +50,10 @@ const DateInfo: FC<PropsWithChildren<Props>> = ({
                 ) : null}
             </View>
             <View style={[styles.line, styles.secondLine]}>
-                <UnderlinedText color={COLORS.peachy} type="bold">
+                <Text type="bold" style={{ color: COLORS.role }}>
                     {position}
-                </UnderlinedText>
-                <Text>{`(${dateStart.format('MM, YYYY')}–${
+                </Text>
+                <Text style={{ color: COLORS.dim }}>{`(${dateStart.format('MM, YYYY')}–${
                     dateEnd?.format('MM, YYYY') ?? '…'
                 }), ${diff}`}</Text>
                 <Text>{stack ? <Text>{stack}</Text> : null}</Text>
@@ -74,9 +71,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     line: { flexDirection: 'row', marginBottom: 4 },
-    place: {
-        fontStyle: 'italic',
-    },
     notes: {
         width: '95%',
         marginLeft: '5%',
