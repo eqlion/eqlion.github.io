@@ -37,8 +37,6 @@ export const en = {
         },
     },
     Util: {
-        showMore: 'Show more',
-        showLess: 'Show less',
         year_one: '{{count}} year',
         year_few: '{{count}} years',
         year_many: '{{count}} years',
