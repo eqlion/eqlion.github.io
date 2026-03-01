@@ -4,4 +4,3 @@ export { Link } from './Link';
 export { Screen } from './Screen';
 export { Text } from './Text';
 export { Title } from './Title';
-export { UnderlinedText } from './UnderlinedText';
