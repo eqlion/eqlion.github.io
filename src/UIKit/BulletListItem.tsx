@@ -6,7 +6,7 @@ import { COLORS } from '../util/colors';
 const BulletListItem: FC<PropsWithChildren> = ({ children }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.bullet}>- </Text>
+            <Text style={styles.bullet}>-</Text>
             {children}
         </View>
     );
@@ -21,5 +21,6 @@ const styles = StyleSheet.create({
     },
     bullet: {
         color: COLORS.dim,
+        marginRight: 4,
     },
 });
