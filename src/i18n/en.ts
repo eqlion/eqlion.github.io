@@ -2,7 +2,7 @@ export const en = {
     About: {
         title: 'Nikolay Lapa',
         // eslint-disable-next-line quotes
-        text: 'Mobile Engineer with 5 years of experience in large tech companies. Proficient in iOS Development (Swift) and React Native (JavaScript, TypeScript). Experienced in leading development of product features in cross-platform teams, contributing to app architecture, and working with product teams and stakeholders to gather requirements. Rewrote an app from React Native to native iOS.',
+        text: "Staff Engineer leading cross-functional product features end-to-end across iOS (Swift), backend (Go, TypeScript), and CMS platforms in a fintech app serving 15M+ users. Experienced feature owner with a track record of driving complex, multi-team initiatives from requirements through release.",
     },
     Contacts: {
         title: 'Contacts && Links',
@@ -14,26 +14,39 @@ export const en = {
     },
     Education: {
         itmo: {
-            position: 'Bachelor of Science',
+            position: 'Bachelor of Science in Optical Engineering',
             place: 'ITMO University',
-            stack: 'Lasers in info-communicational systems',
             thesis: ': Development of the receiving part of the uplink communication channel using Li-Fi technology. Used LaTeX for writing and Python for plotting and calculations.',
             link: 'Thesis (in Russian)',
-            gpa: 'GPA: 4.5/5.0',
+            gpa: 'GPA: 4.5/5',
         },
         title: 'Education',
     },
     Experience: {
         title: 'Experience',
-        sbermarket:
-            'Worked in android mobile team, working on delivering various features across the app. Implemented and released BNPL customer payment option in the app, including the UI layout (with complex animations), backend integration, ab-test integration. React Native, Typescript, styled-components, React Navigation, React Native Reanimated 2, custom solutions for app architecture and state-management, module approach, DI',
-        sixhands: {
-            text: 'Worked on several outsourced apps at once doing the whole development cycle on my own: layout, business-logic, building and signing, sending to tests (TestFlight), uploading to the store (AppStore, Google Play Store). React Native (bare/managed), TypeScript, react-navigation, react-native-reanimated, redux, hooks',
-        },
+        sbermarket: [
+            'Developed and released the BNPL payment option, including complex animated UI, backend integration, and A/B test rollout.',
+        ],
+        sixhands: [
+            'Owned the full development cycle for multiple apps simultaneously: layout, business logic, build/sign, testing (TestFlight), and store submission (App Store, Google Play).',
+        ],
         tabby: {
-            ios: 'Transitioned the app RN -> Swift, led development of several cross-team cross-functional features: the Pay Later card activation, Money hub. Introduced BDUI for marketing purposes allowing to create in-app banners and promo screens without mobile releases. Improved the main Money page load speed by 35%, from 1.70 s to 670 ms. Created DataDog dashboards and alerts to monitor product vitals. Onboarded 4 engineers, interviewed candidates. Swift, Combine, UIKit, TCA, Tuist, DI, coordinators/instructors, tests, ab-tests, feature-flags, analytics',
-            reactNative:
-                'Built the Tabby Card in the app: KYC, card issuance, adding card to the Wallet. Built One-time Limit feature: an additional entry-point product for customers with lower score: deeplink integration, heavy usage of instructor pattern. TypeScript, native modules, react-navigation, i11n, analytics, ab-tests',
+            staff: [
+                'Led end-to-end delivery of Limit Decrease UX and Tabby Card New Headers (DivKit/server-driven UI), coordinating across Mobile, Backend, and CMS teams.',
+                'Drove widget architecture refactoring across ~7.5k LOC, migrating core product widgets with zero production incidents.',
+                'Owned In-App provisioning across iOS and Android, managing production migration, and consulting other card teams on wallet integrations.',
+            ],
+            senior: [
+                'Improved main Money page load time by 60%, from 1.70 s to 670 ms.',
+                'Built an AI-powered Cursor x Figma MCP tool and presented it to ~500 engineers at Tabby\'s inaugural tech conference as one of four selected speakers.',
+                'Authored iOS architecture refactoring proposal (TDR), reviewed and approved by the platform lead and system architect, establishing a clear path to reduce tech debt.',
+                'Contributed to backend Go and TypeScript services across multiple sprints, unblocking mobile development independently of the single BE engineer.',
+                'Introduced backend-driven UI architecture adopted across the stream, enabling content updates without mobile releases.',
+            ],
+            reactNative: [
+                'Built the complete KYC and virtual card issuance flow from scratch in a two-person team, handling complex edge cases and session resumption logic.',
+                'Singlehandedly developed the One-time limit feature, integrating it with the existing card flow across multiple entry and exit points.',
+            ],
         },
     },
     Util: {
@@ -47,26 +60,26 @@ export const en = {
         month_other: '{{count}} months',
     },
     Buzzwords: {
-        title: 'Buzzwords',
-        programmingLanguages: {
-            title: 'Programming languages',
-            text: 'Swift, JavaScript, TypeScript',
-        },
-        tools: {
-            title: 'Tools',
-            text: 'Xcode, Tuist, Cursor, git',
+        title: 'Skills',
+        languages: {
+            title: 'Languages',
+            text: 'Swift, TypeScript, Go, JavaScript',
         },
         frameworks: {
-            title: 'Frameworks / Libraries',
-            text: 'Combine, UIKit, TCA, React Native, Expo, Redux, Flux',
+            title: 'Frameworks',
+            text: 'Combine, UIKit, TCA, React Native, DivKit',
         },
         concepts: {
             title: 'Concepts',
-            text: 'Performance Optimization, A/B Testing, Unit / Snapshot / MVI / Navigation / E2E tests, CI/CD, RESTful APIs, Agile/Scrum, Incident analysis, logging, alerting, Task estimation, Planning',
+            text: 'Performance Optimization, Server-Driven UI, A/B Testing, CI/CD, Production Monitoring (DataDog), Incident Response, Architecture Design (TDR/ADR), Feature Ownership, Cross-Team Coordination',
         },
-        languages: {
+        testing: {
+            title: 'Testing',
+            text: 'Unit, Snapshot, MVI, Navigation, E2E',
+        },
+        spokenLanguages: {
             title: 'Languages',
-            text: 'English (proficient), Russian (native)',
+            text: 'English fluent, Russian native',
         },
     },
 };

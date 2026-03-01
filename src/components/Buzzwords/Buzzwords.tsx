@@ -5,12 +5,8 @@ import { StyleSheet, View } from 'react-native';
 
 const buzzwords = [
     {
-        title: 'Buzzwords.programmingLanguages.title',
-        text: 'Buzzwords.programmingLanguages.text',
-    },
-    {
-        title: 'Buzzwords.tools.title',
-        text: 'Buzzwords.tools.text',
+        title: 'Buzzwords.languages.title',
+        text: 'Buzzwords.languages.text',
     },
     {
         title: 'Buzzwords.frameworks.title',
@@ -21,8 +17,12 @@ const buzzwords = [
         text: 'Buzzwords.concepts.text',
     },
     {
-        title: 'Buzzwords.languages.title',
-        text: 'Buzzwords.languages.text',
+        title: 'Buzzwords.testing.title',
+        text: 'Buzzwords.testing.text',
+    },
+    {
+        title: 'Buzzwords.spokenLanguages.title',
+        text: 'Buzzwords.spokenLanguages.text',
     },
 ];
 

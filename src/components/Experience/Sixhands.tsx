@@ -1,19 +1,26 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DateInfo, Text } from '@UIKit';
+import { BulletListItem, DateInfo, Text } from '@UIKit';
 import dayjs from 'dayjs';
 
 const Sixhands: FC = () => {
     const { t } = useTranslation();
+    const bullets = t('Experience.sixhands', {
+        returnObjects: true,
+    }) as string[];
     return (
         <DateInfo
-            place="Sixhands"
+            place="SixHands"
             url="https://sixhands.co/"
-            position="Junior/Middle React Native dev"
+            position="Junior Mobile Engineer"
             dateStart={dayjs('07, 2020', 'MM, YYYY')}
             dateEnd={dayjs('07, 2021', 'MM, YYYY')}>
-            <Text>{t('Experience.sixhands.text')}</Text>
+            {bullets.map((item, i) => (
+                <BulletListItem key={i}>
+                    <Text>{item}</Text>
+                </BulletListItem>
+            ))}
         </DateInfo>
     );
 };

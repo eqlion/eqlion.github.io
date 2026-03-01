@@ -11,8 +11,7 @@ const Itmo: FC = () => {
             dateStart={dayjs('09, 2017', 'MM, YYYY')}
             dateEnd={dayjs('07, 2021', 'MM, YYYY')}
             position={t('Education.itmo.position')}
-            place={t('Education.itmo.place')}
-            stack={t('Education.itmo.stack')}>
+            place={t('Education.itmo.place')}>
             <Text>{t('Education.itmo.gpa')}</Text>
             <Text>
                 <Link url="https://github.com/eqlion/bachelor-diploma">
