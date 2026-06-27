@@ -67,11 +67,11 @@ export const en = {
         },
         frameworks: {
             title: 'Frameworks',
-            text: 'Combine, UIKit, TCA, React Native, DivKit',
+            text: 'Combine, UIKit, SwiftUI, TCA, React Native, DivKit',
         },
         concepts: {
             title: 'Concepts',
-            text: 'Performance Optimization, Server-Driven UI, A/B Testing, CI/CD, Production Monitoring (DataDog), Incident Response, Architecture Design (TDR/ADR), Feature Ownership, Cross-Team Coordination',
+            text: 'AI SDLC, Performance Optimization, Server-Driven UI, A/B Testing, CI/CD, Production Monitoring (DataDog), Incident Response, Architecture Design (TDR/ADR), Feature Ownership, Cross-Team Coordination',
         },
         testing: {
             title: 'Testing',
