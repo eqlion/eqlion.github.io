@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { View, StyleSheet } from 'react-native';
-import { Title } from '@UIKit';
+import { Link } from 'expo-router';
+import { View, StyleSheet, Pressable } from 'react-native';
+import { Title, Text } from '@UIKit';
 import { AboutText } from './AboutText';
+import { COLORS } from '../../util/colors';
 
 const About: FC = () => {
     const { t } = useTranslation();
@@ -10,6 +12,11 @@ const About: FC = () => {
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Title>{t('About.title')}</Title>
+                <Link href="/blog" asChild>
+                    <Pressable>
+                        <Text style={styles.blogLink}>blog →</Text>
+                    </Pressable>
+                </Link>
             </View>
             <AboutText />
         </View>
@@ -26,5 +33,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+    },
+    blogLink: {
+        color: COLORS.link,
     },
 });

@@ -1,6 +1,6 @@
 {
   "homepage": "http://eqlion.github.io",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "web": "expo start --web",
@@ -12,21 +12,28 @@
     "test": "jest"
   },
   "dependencies": {
+    "@bacons/mdx": "^1.0.3",
     "@expo-google-fonts/fira-code": "^0.2.3",
     "@expo/metro-runtime": "~55.0.6",
     "dayjs": "^1.11.10",
     "expo": "~55.0.4",
     "expo-font": "~55.0.4",
+    "expo-linking": "~55.0.15",
+    "expo-router": "~55.0.16",
     "i18next": "^23.11.2",
+    "prismjs": "^1.30.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^14.1.1",
     "react-native": "0.83.2",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0",
     "react-native-web": "^0.21.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
+    "@types/prismjs": "^1.26.6",
     "@types/react": "~19.2.10",
     "@types/react-helmet": "^6.1.11",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
