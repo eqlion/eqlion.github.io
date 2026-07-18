@@ -3,16 +3,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPreview from '../components/BlogPreview.astro';
 import ExperienceEntry from '../components/ExperienceEntry.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import { contacts, education, experience, profile, skills } from '../data/resume';
-import { formatMonth } from '../lib/dates';
+import {
+    contacts,
+    education,
+    experience,
+    profile,
+    selectedImpact,
+    skills,
+} from '../data/resume';
 
-const educationPeriod = `${formatMonth(education.start)}–${formatMonth(education.end)}`;
+const educationPeriod = `${education.start}–${education.end}`;
 const personData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: profile.name,
     url: Astro.site,
-    jobTitle: 'Staff Software Engineer',
+    jobTitle: profile.headline,
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Bangkok',
+        addressCountry: 'Thailand',
+    },
     sameAs: contacts
         .filter(({ url }) => url.startsWith('https://'))
         .map(({ url }) => url),
@@ -21,7 +32,7 @@ const personData = {
 
 <BaseLayout
     title={profile.name}
-    description={profile.summary}
+    description={profile.about[0]}
     structuredData={personData}
 >
     <section>
@@ -29,7 +40,8 @@ const personData = {
             <h1>{profile.name}</h1>
             <a href="/blog">blog →</a>
         </header>
-        <p>{profile.summary}</p>
+        <p><strong>{profile.headline}</strong></p>
+        <p class="dim">{profile.location}</p>
     </section>
 
     <section>
@@ -43,6 +55,18 @@ const personData = {
                 ))
             }
         </nav>
+    </section>
+
+    <section>
+        <SectionHeader title="About" />
+        {profile.about.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+
+    <section>
+        <SectionHeader title="Selected Impact" />
+        <ul class="terminal-list">
+            {selectedImpact.map((impact) => <li>{impact}</li>)}
+        </ul>
     </section>
 
     <section>
@@ -62,19 +86,11 @@ const personData = {
                 <strong class="role">{education.position}</strong>
                 <span class="dim">({educationPeriod})</span>
             </div>
-            <div class="entry-notes">
-                <div>{education.notes[0]}</div>
-                <div>
-                    <a href={education.thesisUrl} target="_blank" rel="noreferrer">
-                        Thesis (in Russian)
-                    </a>: {education.notes[1]}
-                </div>
-            </div>
         </article>
     </section>
 
     <section>
-        <SectionHeader title="Skills" />
+        <SectionHeader title="Core Skills" />
         <ul class="terminal-list">
             {
                 skills.map((skill) => (

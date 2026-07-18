@@ -4,27 +4,36 @@ export type ExperienceEntry = {
     position: string;
     start: string;
     end?: string;
-    bullets: string[];
+    summary: string;
 };
 
 export const profile = {
-    name: 'Nikolay Lapa',
-    summary:
-        'Staff Engineer leading cross-functional product features end-to-end across iOS (Swift), backend (Go, TypeScript), and CMS platforms in a fintech app serving 15M+ users. Experienced feature owner with a track record of driving complex, multi-team initiatives from requirements through release.',
+    name: 'Nikolai Lapa',
+    headline: 'Lead iOS Engineer | Mobile Architecture and Product Delivery',
+    location: 'Bangkok, Thailand',
+    about: [
+        'I am a Lead iOS Engineer and current Staff Software Engineer with 6 years of experience building consumer fintech products at 15M+ user scale. I lead cross-functional initiatives from product definition and architecture through rollout and production ownership.',
+        'My primary depth is in Swift, mobile architecture, performance, and reliable product delivery. I am also comfortable crossing service boundaries into Go, TypeScript, APIs, database migrations, CMS platforms, and server-driven UI when that is what a feature needs.',
+    ],
 };
 
 export const contacts = [
-    { label: 'Telegram', url: 'https://t.me/eqlion' },
     { label: 'Email', url: 'mailto:lapanicholas@gmail.com' },
     {
         label: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/nikolay-lapa-6a8607220/',
+        url: 'https://www.linkedin.com/in/nikolay-lapa-6a8607220',
     },
-    { label: 'GitHub', url: 'https://github.com/eqlion/' },
-    {
-        label: 'CV',
-        url: 'https://drive.google.com/file/d/1JQFFhIhyrkdDLvuk4x0rLBspQDPTeI3x/view?usp=sharing',
-    },
+    { label: 'GitHub', url: 'https://github.com/eqlion' },
+    { label: 'Telegram', url: 'https://t.me/eqlion' },
+];
+
+export const selectedImpact = [
+    'Designed and delivered a reusable urgent-alert mechanism spanning iOS, Android, backend contracts, CMS, and silent-push refresh. It now supports three production use cases across approximately four teams and is maintained independently by two platform teams.',
+    'Led a server-driven redesign of the Tabby Card header across Swift, Go, TypeScript, and CMS. Reusable components were adopted by two additional teams, reducing content and layout iteration from up to two weeks to approximately 30 minutes.',
+    'Led architecture and delivery of multi-card provisioning across three teams and approximately seven engineers, enabling the Tabby Cash Card launch and Apple certification without migration incidents. Also led the Apple-required Wallet Extension from architecture through implementation and 100% iOS rollout.',
+    'Modernized Card Activation by removing approximately 31K lines of obsolete code and replacing two legacy modules with five layered modules, improving ownership boundaries, testability, and selective testing.',
+    "Reduced the Money screen's time to meaningful content by 60%, from 1.70 seconds to 670 milliseconds, after profiling waterfall requests and making non-critical content load asynchronously.",
+    'Mentored 5+ iOS, Android, and QA engineers, interviewed candidates, contributed performance feedback, and regularly reviewed and presented proposals through the mobile architecture committee.',
 ];
 
 export const experience: ExperienceEntry[] = [
@@ -33,32 +42,22 @@ export const experience: ExperienceEntry[] = [
         companyUrl: 'https://tabby.ai',
         position: 'Staff Software Engineer',
         start: '2025-08',
-        bullets: [
-            'Led end-to-end delivery of Limit Decrease UX and Tabby Card New Headers (DivKit/server-driven UI), coordinating across Mobile, Backend, and CMS teams.',
-            'Drove widget architecture refactoring across ~7.5k LOC, migrating core product widgets with zero production incidents.',
-            'Owned In-App provisioning across iOS and Android, managing production migration, and consulting other card teams on wallet integrations.',
-        ],
+        summary:
+            'Lead mobile architecture and cross-functional delivery for Tabby Card initiatives spanning iOS, Android, backend services, CMS, provisioning, and platform integrations.',
     },
     {
         position: 'Senior Mobile Developer',
         start: '2022-12',
         end: '2025-08',
-        bullets: [
-            'Improved main Money page load time by 60%, from 1.70 s to 670 ms.',
-            "Built an AI-powered Cursor x Figma MCP tool and presented it to ~500 engineers at Tabby's inaugural tech conference as one of four selected speakers.",
-            'Authored iOS architecture refactoring proposal (TDR), reviewed and approved by the platform lead and system architect, establishing a clear path to reduce tech debt.',
-            'Contributed to backend Go and TypeScript services across multiple sprints, unblocking mobile development independently of the single BE engineer.',
-            'Introduced backend-driven UI architecture adopted across the stream, enabling content updates without mobile releases.',
-        ],
+        summary:
+            'Led product features, introduced server-driven UI to the stream, improved iOS performance, built production monitoring, and contributed across mobile, backend, and CMS systems.',
     },
     {
         position: 'React Native Developer',
         start: '2022-04',
         end: '2022-12',
-        bullets: [
-            'Built the complete KYC and virtual card issuance flow from scratch in a two-person team, handling complex edge cases and session resumption logic.',
-            'Singlehandedly developed the One-time limit feature, integrating it with the existing card flow across multiple entry and exit points.',
-        ],
+        summary:
+            "Built and launched the UAE KYC and virtual-card issuance journey that became the technical foundation of today's Tabby Card product. Served as the sole mobile engineer for its original entry product, One-time Limit.",
     },
     {
         company: 'SberMarket',
@@ -66,9 +65,8 @@ export const experience: ExperienceEntry[] = [
         position: 'Mobile Engineer',
         start: '2021-07',
         end: '2022-04',
-        bullets: [
-            'Developed and released the BNPL payment option, including complex animated UI, backend integration, and A/B test rollout.',
-        ],
+        summary:
+            'Developed and rolled out a BNPL payment option for a consumer-delivery platform with more than 10M monthly active users.',
     },
     {
         company: 'SixHands',
@@ -76,31 +74,31 @@ export const experience: ExperienceEntry[] = [
         position: 'Junior Mobile Engineer',
         start: '2020-07',
         end: '2021-07',
-        bullets: [
-            'Owned the full development cycle for multiple apps simultaneously: layout, business logic, build/sign, testing (TestFlight), and store submission (App Store, Google Play).',
-        ],
+        summary:
+            'Delivered multiple client applications through implementation, testing, signing, and App Store and Google Play release.',
     },
 ];
 
 export const education = {
     institution: 'ITMO University',
-    position: 'Bachelor of Science in Optical Engineering',
-    start: '2017-09',
-    end: '2021-07',
-    notes: [
-        'GPA: 4.5/5',
-        'Development of the receiving part of the uplink communication channel using Li-Fi technology. Used LaTeX for writing and Python for plotting and calculations.',
-    ],
-    thesisUrl: 'https://github.com/eqlion/bachelor-diploma',
+    position: 'BSc, Optical Engineering',
+    start: '2017',
+    end: '2021',
 };
 
 export const skills = [
-    { title: 'Languages', text: 'Swift, TypeScript, Go, JavaScript' },
-    { title: 'Frameworks', text: 'Combine, UIKit, SwiftUI, TCA, React Native, DivKit' },
+    { title: 'iOS', text: 'Swift, SwiftUI, UIKit, Combine, TCA, Swift Concurrency, Swift Package Manager' },
     {
-        title: 'Concepts',
-        text: 'AI SDLC, Performance Optimization, Server-Driven UI, A/B Testing, CI/CD, Production Monitoring (DataDog), Incident Response, Architecture Design (TDR/ADR), Feature Ownership, Cross-Team Coordination',
+        title: 'Architecture and quality',
+        text: 'Modularization, Instruments, performance analysis, accessibility, unit, snapshot, MVI, navigation, and end-to-end testing',
     },
-    { title: 'Testing', text: 'Unit, Snapshot, MVI, Navigation, E2E' },
-    { title: 'Languages', text: 'English fluent, Russian native' },
+    {
+        title: 'Delivery',
+        text: 'App Store releases, Fastlane, GitLab CI, Datadog, production monitoring, and incident response',
+    },
+    {
+        title: 'Cross-stack',
+        text: 'React Native, TypeScript, Go, REST, gRPC, database migrations, CMS, and server-driven UI',
+    },
+    { title: 'Languages', text: 'English (fluent), Russian (native)' },
 ];

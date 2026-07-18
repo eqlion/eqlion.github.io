@@ -33,7 +33,5 @@ const period = `${formatMonth(entry.start)}–${entry.end ? formatMonth(entry.en
         <strong class="role">{entry.position}</strong>
         <span class="dim">({period})</span>
     </div>
-    <ul class="terminal-list entry-notes">
-        {entry.bullets.map((bullet) => <li>{bullet}</li>)}
-    </ul>
+    <p class="entry-notes">{entry.summary}</p>
 </article>
