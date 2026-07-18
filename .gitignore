@@ -2,6 +2,7 @@ node_modules/
 .astro/
 .expo/
 npm-debug.*
+yarn-error.log
 *.jks
 *.p8
 *.p12

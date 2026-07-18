@@ -1,14 +1,13 @@
 ---
 import type { ExperienceEntry } from '../data/resume';
-import { formatDuration, formatMonth } from '../lib/dates';
+import { formatMonth } from '../lib/dates';
 
 type Props = {
     entry: ExperienceEntry;
 };
 
 const { entry } = Astro.props;
-const period = `${formatMonth(entry.start)}–${entry.end ? formatMonth(entry.end) : '…'}`;
-const duration = formatDuration(entry.start, entry.end);
+const period = `${formatMonth(entry.start)}–${entry.end ? formatMonth(entry.end) : 'present'}`;
 ---
 
 <article class="experience-entry">
@@ -32,7 +31,7 @@ const duration = formatDuration(entry.start, entry.end);
     </div>
     <div class="role-block">
         <strong class="role">{entry.position}</strong>
-        <span class="dim">({period}), {duration}</span>
+        <span class="dim">({period})</span>
     </div>
     <ul class="terminal-list entry-notes">
         {entry.bullets.map((bullet) => <li>{bullet}</li>)}

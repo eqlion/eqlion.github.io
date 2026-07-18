@@ -5,6 +5,11 @@ description: A framework for letting agents explore an app, build product knowle
 draft: false
 ---
 
+import expeditionPhoto from '../../assets/expeditions/V6ENQUE.jpeg';
+import coreLoopDiagram from '../../assets/expeditions/M99bGmP.png';
+import outOfLoopDiagram from '../../assets/expeditions/uxNetDE.png';
+import qaGoonDiagram from '../../assets/expeditions/P7r5WHU.png';
+
 # Expeditions
 
 [Expeditions starter on GitHub](https://github.com/eqlion/expedition-starter)
@@ -24,11 +29,10 @@ I tried turning that into a framework.
 ## Expeditions
 
 <BlogImage
-  src="/images/expeditions/V6ENQUE.jpeg"
-  alt="expedition"
-  width="60%"
-  intrinsicWidth={800}
-  intrinsicHeight={533}
+  src={expeditionPhoto}
+  alt="A lone hiker crosses a snowy mountain pass beneath dark storm clouds."
+  caption="An expedition starts by heading into unfamiliar territory."
+  width="560px"
 />
 
 Expeditions are my attempt at solving the product context issue. The main idea is to let agents explore the app while I'm not working and write down what they learn.
@@ -40,11 +44,10 @@ My solution was to add an escape hatch that lets me introduce new information in
 ## Core loop
 
 <BlogImage
-  src="/images/expeditions/M99bGmP.png"
-  alt="the core loop diagram"
-  width="60%"
-  intrinsicWidth={1188}
-  intrinsicHeight={794}
+  src={coreLoopDiagram}
+  alt="Circular workflow where the Runner explores the app and writes notes, then the Reviewer organizes those notes into the knowledge base before the next run."
+  caption="The core loop alternates app exploration with knowledge review."
+  width="640px"
 />
 
 The core loop of Expedition is the part that actually grows the product knowledge base. It consists of two parts: the runner and the reviewer. 
@@ -62,11 +65,10 @@ I let the script run the loops five times before stopping. This gives me a chanc
 ## Out of the loop
 
 <BlogImage
-  src="/images/expeditions/uxNetDE.png"
-  alt="out of the loop diagram"
-  width="45%"
-  intrinsicWidth={825}
-  intrinsicHeight={738}
+  src={outOfLoopDiagram}
+  alt="The Interviewer turns answers to open questions into knowledge, while the optional Planner groups leads into larger expedition plans."
+  caption="The Interviewer fills blind spots; the Planner turns scattered leads into efficient runs."
+  width="500px"
 />
 
 The core loop has two inherent issues: it has blind spots, and weak plans when expeditions run purely off raw leads. The blind spots are the result of an agent being able to interact only with the surfaces it sees in the app. If some feature requires additional back-end preparation (e.g. if it involves feature toggles, A/B tests, or other invisible conditions), it is practically invisible to the runner. At the same time, joining leads into a coherent Expedition plan is not a runner's strong suit. These problems are solved by the out-of-the-loop agents: the interviewer and the planner.
@@ -82,11 +84,10 @@ With these two in place, both of the core loop's weaknesses are covered. The int
 ## Consuming the knowledge
 
 <BlogImage
-  src="/images/expeditions/P7r5WHU.png"
-  alt="QA goon diagram"
-  width="60%"
-  intrinsicWidth={1128}
-  intrinsicHeight={428}
+  src={qaGoonDiagram}
+  alt="A QA agent receives a mission and test cases, uses the knowledge base to navigate the app, and produces notes and a test report for the Reviewer."
+  caption="The QA agent consumes product knowledge and feeds new observations back into it."
+  width="640px"
 />
 
 Now that we've run the Expeditions, burned the tokens, what do we do with the knowledge?

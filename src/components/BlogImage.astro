@@ -1,32 +1,53 @@
 ---
+import { Image } from 'astro:assets';
+
 type Props = {
-    src: string;
+    src: ImageMetadata;
     alt: string;
+    caption: string;
     width?: string | number;
     maxWidth?: string | number;
-    intrinsicWidth?: number;
-    intrinsicHeight?: number;
 };
 
 const {
     src,
     alt,
+    caption,
     width = '100%',
-    maxWidth = '100%',
-    intrinsicWidth,
-    intrinsicHeight,
+    maxWidth = '960px',
 } = Astro.props;
 const cssSize = (value: string | number): string =>
     typeof value === 'number' ? `${value}px` : value;
+const outputWidth = Math.min(src.width, 900);
+const isPhoto = src.format === 'jpg' || src.format === 'jpeg';
 ---
 
-<img
-    class="blog-image"
-    src={src}
-    alt={alt}
-    width={intrinsicWidth}
-    height={intrinsicHeight}
-    loading="lazy"
-    decoding="async"
+<figure
+    class="blog-figure"
     style={`--image-width: ${cssSize(width)}; --image-max-width: ${cssSize(maxWidth)};`}
-/>
+>
+    {
+        isPhoto ? (
+            <Image
+                class="blog-image"
+                src={src}
+                alt={alt}
+                width={outputWidth}
+                format="webp"
+                loading="lazy"
+                decoding="async"
+            />
+        ) : (
+            <img
+                class="blog-image"
+                src={src.src}
+                alt={alt}
+                width={src.width}
+                height={src.height}
+                loading="lazy"
+                decoding="async"
+            />
+        )
+    }
+    <figcaption>{caption}</figcaption>
+</figure>

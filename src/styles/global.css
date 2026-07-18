@@ -212,9 +212,23 @@ a:focus-visible {
     color: var(--text);
 }
 
+.back-link,
+.breadcrumb {
+    margin-bottom: 24px;
+}
+
 .back-link {
     display: inline-block;
-    margin-bottom: 24px;
+    color: var(--dim);
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 0.75ch;
+    color: var(--dim);
+}
+
+.breadcrumb a {
     color: var(--dim);
 }
 
@@ -225,6 +239,7 @@ a:focus-visible {
 }
 
 .prose {
+    width: min(100%, 75ch);
     margin-bottom: 48px;
 }
 
@@ -277,13 +292,28 @@ a:focus-visible {
     line-height: 1.55;
 }
 
+.blog-figure {
+    position: relative;
+    left: 50%;
+    display: block;
+    width: min(var(--image-width), calc(100vw - 32px));
+    max-width: min(var(--image-max-width), calc(100vw - 32px));
+    margin: 0 0 20px;
+    transform: translateX(-50%);
+}
+
 .blog-image {
     display: block;
-    width: var(--image-width);
-    max-width: var(--image-max-width);
+    width: 100%;
     height: auto;
-    margin: 0 auto 16px;
     border-radius: 6px;
+}
+
+.blog-figure figcaption {
+    margin-top: 8px;
+    color: var(--dim);
+    font-size: 0.9em;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -293,9 +323,5 @@ a:focus-visible {
 
     .screen {
         padding-top: 32px;
-    }
-
-    .blog-image {
-        width: min(100%, var(--image-width));
     }
 }

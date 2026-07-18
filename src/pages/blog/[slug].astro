@@ -12,13 +12,36 @@ export async function getStaticPaths() {
 type Props = { post: BlogPost };
 const { post } = Astro.props;
 const { Content } = await render(post);
+const canonical = new URL(`/blog/${post.id}/`, Astro.site);
+const publishedTime = post.data.date.toISOString();
+const articleData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: publishedTime,
+    mainEntityOfPage: canonical,
+    image: new URL('/social-card.png', Astro.site),
+    author: {
+        '@type': 'Person',
+        name: 'Nikolay Lapa',
+        url: Astro.site,
+    },
+};
 ---
 
 <BaseLayout
     title={`${post.data.title} — Nikolay Lapa`}
     description={post.data.description}
+    pageType="article"
+    publishedTime={publishedTime}
+    structuredData={articleData}
 >
-    <a class="back-link" href="/blog">~ / blog</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">~</a>
+        <span aria-hidden="true">/</span>
+        <a href="/blog">blog</a>
+    </nav>
     <time class="post-date" datetime={formatPostDate(post.data.date)}>
         {formatPostDate(post.data.date)}
     </time>
