@@ -1,0 +1,28 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogImage from '../../components/BlogImage.astro';
+import { formatPostDate, getPublishedPosts, type BlogPost } from '../../lib/posts';
+
+export async function getStaticPaths() {
+    const posts = await getPublishedPosts();
+    return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+type Props = { post: BlogPost };
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+    title={`${post.data.title} — Nikolay Lapa`}
+    description={post.data.description}
+>
+    <a class="back-link" href="/blog">~ / blog</a>
+    <time class="post-date" datetime={formatPostDate(post.data.date)}>
+        {formatPostDate(post.data.date)}
+    </time>
+    <article class="prose">
+        <Content components={{ BlogImage }} />
+    </article>
+</BaseLayout>

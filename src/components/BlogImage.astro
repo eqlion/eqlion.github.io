@@ -1,0 +1,32 @@
+---
+type Props = {
+    src: string;
+    alt: string;
+    width?: string | number;
+    maxWidth?: string | number;
+    intrinsicWidth?: number;
+    intrinsicHeight?: number;
+};
+
+const {
+    src,
+    alt,
+    width = '100%',
+    maxWidth = '100%',
+    intrinsicWidth,
+    intrinsicHeight,
+} = Astro.props;
+const cssSize = (value: string | number): string =>
+    typeof value === 'number' ? `${value}px` : value;
+---
+
+<img
+    class="blog-image"
+    src={src}
+    alt={alt}
+    width={intrinsicWidth}
+    height={intrinsicHeight}
+    loading="lazy"
+    decoding="async"
+    style={`--image-width: ${cssSize(width)}; --image-max-width: ${cssSize(maxWidth)};`}
+/>

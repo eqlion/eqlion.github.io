@@ -1,29 +1,31 @@
-[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-000.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/client)
-
 # Personal website
 
-The whole site is written with React Native for Web in TypeScript and deployed on [GitHub Pages](https://eqlion.github.io).
+Nikolay Lapa's personal website and blog, built with Astro and deployed to
+[GitHub Pages](https://eqlion.github.io).
 
-# Develop
+The site is statically generated and ships no client-side JavaScript.
 
-```bash
-git clone git@github.com:eqlion/eqlion.github.io.git
-```
-
-```bash
-cd eqlion.github.io && yarn
-```
-
-make some changes, test locally:
+## Development
 
 ```bash
-yarn start
+yarn
+yarn dev
 ```
 
-then press `w` to launch React Native for Web in browser.
+Astro serves the local site at `http://localhost:4321`.
 
-When ready to deploy
+## Verification
 
 ```bash
-yarn deploy
+yarn run check
+yarn build
 ```
+
+The production site is generated in `dist/`. Pushes to `main` are deployed by
+the GitHub Pages workflow.
+
+## Adding a blog post
+
+Add an `.md` or `.mdx` file under `src/content/blog/` with `title`, `date`, and
+optional `description` metadata. The blog index, homepage preview, and static
+post route are generated automatically.

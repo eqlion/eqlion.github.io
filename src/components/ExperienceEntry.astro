@@ -1,0 +1,40 @@
+---
+import type { ExperienceEntry } from '../data/resume';
+import { formatDuration, formatMonth } from '../lib/dates';
+
+type Props = {
+    entry: ExperienceEntry;
+};
+
+const { entry } = Astro.props;
+const period = `${formatMonth(entry.start)}–${entry.end ? formatMonth(entry.end) : '…'}`;
+const duration = formatDuration(entry.start, entry.end);
+---
+
+<article class="experience-entry">
+    <div class="company-line">
+        {
+            entry.company && (
+                <>
+                    <span class="company">{entry.company}</span>
+                    {entry.companyUrl && (
+                        <>
+                            <span>, </span>
+                            <a href={entry.companyUrl} target="_blank" rel="noreferrer">
+                                {new URL(entry.companyUrl).hostname.replace('www.', '')}
+                            </a>
+                            <span>, </span>
+                        </>
+                    )}
+                </>
+            )
+        }
+    </div>
+    <div class="role-block">
+        <strong class="role">{entry.position}</strong>
+        <span class="dim">({period}), {duration}</span>
+    </div>
+    <ul class="terminal-list entry-notes">
+        {entry.bullets.map((bullet) => <li>{bullet}</li>)}
+    </ul>
+</article>

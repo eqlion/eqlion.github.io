@@ -2,36 +2,33 @@
 
 ## Project Overview
 
-This is Nikolay Lapa's personal website, hosted at `https://eqlion.github.io` via GitHub Pages.
-
-The site is an Expo / React Native for Web app written in TypeScript. It renders a terminal-like CV/resume page and is currently being expanded with a static blog section. The blog work is in progress and uses Expo Router plus MDX so posts can be authored as Markdown/MDX while still using the existing React Native UI primitives.
+This is Nikolay Lapa's personal website, hosted at `https://eqlion.github.io`
+through GitHub Pages. It is an Astro static site containing a terminal-like CV
+and an MDX blog. The production build intentionally ships no client-side
+JavaScript.
 
 ## Stack
 
-- Expo with React Native for Web
-- React 19 and React Native 0.83
-- TypeScript with `strict` enabled
-- Expo Router for file-based routes
-- `@bacons/mdx` for MDX posts
-- PrismJS for code highlighting in blog code blocks
-- Jest with `jest-expo`
-- GitHub Pages deployment through `gh-pages`
+- Astro with static output
+- TypeScript with strict checking
+- Astro content collections
+- `@astrojs/mdx` for blog posts
+- Build-time Shiki syntax highlighting
+- Local Fira Code fonts
+- GitHub Pages deployment through GitHub Actions
 
 ## Important Paths
 
-- `app/_layout.tsx` - root Expo Router layout, font loading, global route styling.
-- `app/index.tsx` - main personal/CV page.
-- `app/blog/index.tsx` - blog post listing.
-- `app/blog/[slug].tsx` - individual blog post route.
-- `src/components/` - CV sections such as About, Contacts, Experience, Education, Buzzwords.
-- `src/UIKit/` - shared visual primitives (`Screen`, `Text`, `Title`, `Link`, etc.).
-- `src/blog/posts.ts` - typed blog post registry and sorting helpers.
-- `src/blog/mdxComponents.tsx` - Markdown/MDX element mapping to themed React Native components.
-- `src/blog/CodeBlock.tsx` - Prism-backed fenced code block rendering.
-- `content/posts/` - MDX posts that are currently wired into the blog.
-- `posts/` - older or source markdown/image post material; this is not currently registered in `src/blog/posts.ts`.
-- `src/util/colors.ts` - shared color palette.
-- `plan.md` - implementation plan for the blog migration.
+- `src/pages/index.astro` - main CV page.
+- `src/pages/blog/index.astro` - blog listing.
+- `src/pages/blog/[slug].astro` - statically generated post route.
+- `src/layouts/BaseLayout.astro` - document shell and global metadata.
+- `src/components/` - shared static UI components.
+- `src/content/blog/` - Markdown and MDX posts.
+- `src/content.config.ts` - typed blog collection schema.
+- `src/data/resume.ts` - CV content and links.
+- `src/styles/global.css` - terminal theme and responsive layout.
+- `public/fonts/` - regular and bold Fira Code assets.
 
 ## Development Commands
 
@@ -39,61 +36,42 @@ Use Yarn; the lockfile is `yarn.lock`.
 
 ```bash
 yarn
-yarn start
-yarn web
-yarn typescript
-yarn lint
-yarn test
-yarn deploy
+yarn dev
+yarn run check
+yarn build
+yarn preview
 ```
 
-Deployment is:
-
-```bash
-expo export -p web
-gh-pages -t -d dist
-```
-
-The package scripts wrap this as `yarn deploy`, with `predeploy` generating `dist`.
+`yarn build` runs Astro diagnostics and emits the production site to `dist/`.
 
 ## Routing And Static Export
 
-`package.json` uses `expo-router/entry` as the main entry point. `app.json` configures:
+Astro's default static generation emits HTML for `/`, `/blog`, and every
+published blog collection entry under `/blog/<slug>`. Keep public URLs stable;
+GitHub Pages serves the generated directory routes directly.
 
-- `web.output: "static"`
-- `web.bundler: "metro"`
-- `plugins: ["expo-font", "expo-router"]`
-
-For dynamic blog routes, keep `generateStaticParams()` in `app/blog/[slug].tsx` in sync with the post registry. Static export depends on that list to emit HTML for each post.
+Do not add client hydration directives unless a feature genuinely requires
+browser-side state. Ordinary links, CV content, MDX rendering, images, date
+formatting, and syntax highlighting should remain build-time concerns.
 
 ## Blog Content Model
 
-Blog metadata currently lives in TypeScript, not frontmatter. To add a post:
+To add a post:
 
-1. Add an `.mdx` file under `content/posts/`.
-2. Import it in `src/blog/posts.ts`.
-3. Add a `Post` entry with `slug`, `title`, `date`, optional `description`, and `Component`.
+1. Add an `.md` or `.mdx` file under `src/content/blog/`.
+2. Include `title`, `date`, optional `description`, and optional `draft`
+   frontmatter matching `src/content.config.ts`.
+3. Use `BlogImage` for custom image widths in MDX.
 
-Dates are ISO strings (`YYYY-MM-DD`) and are used by `sortedPosts()` for newest-first ordering.
-
-## MDX Notes
-
-Metro is configured manually for `.md` and `.mdx` in `metro.config.js`. Do not replace it with `@bacons/mdx`'s `withMdx` helper without retesting: the current local `mdx-transformer.js` exists because the helper self-resolved a non-exported package subpath under the current Node/Expo setup.
-
-`src/blog/mdxComponents.tsx` maps Markdown elements to the site's existing React Native UI and filters whitespace-only string children before rendering `View` containers. This matters because React Native does not allow raw text directly inside `View`.
+Published posts are discovered, sorted newest-first, listed on `/blog`, and
+included in the latest-five homepage preview automatically.
 
 ## Style Conventions
 
-- Prefer existing UIKit primitives over raw React Native components for site text/layout.
-- Use `COLORS` from `src/util/colors.ts`; avoid introducing one-off palette values unless the component already does so for syntax highlighting or code backgrounds.
-- The visual identity is compact, terminal-like, dark, and Fira Code based.
-- Keep the blog visually consistent with the CV page.
-- Use the path aliases configured in `tsconfig.json` and `babel.config.js`:
-  - `@UIKit` -> `./src/UIKit`
-  - `@hooks` -> `./src/hooks`
-
-## Current Worktree Context
-
-The blog migration is not fully committed. At the time this file was created, the worktree included uncommitted changes that remove the old `App.tsx` entry and add the `app/`, `content/`, `src/blog/`, MDX transformer, and Metro config files. Treat these as user work in progress and do not revert them unless explicitly asked.
-
-There is also a generated `dist/` folder present locally. Avoid editing generated output by hand.
+- Use semantic HTML and Astro components rather than a client UI framework.
+- Reuse the CSS custom properties in `src/styles/global.css`.
+- Keep the compact, dark, terminal-like Fira Code visual identity.
+- Responsive behavior must be expressed in CSS so initial HTML and final layout
+  match without hydration.
+- Preserve post prose unless the user explicitly asks for editorial changes.
+- Do not edit generated `dist/` output by hand.

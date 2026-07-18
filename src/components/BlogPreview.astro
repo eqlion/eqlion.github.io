@@ -1,0 +1,23 @@
+---
+import { formatPostDate, getPublishedPosts } from '../lib/posts';
+import SectionHeader from './SectionHeader.astro';
+
+const posts = (await getPublishedPosts()).slice(0, 5);
+---
+
+<section>
+    <SectionHeader title="Blog" href="/blog" linkLabel="all posts →" />
+    <div class="post-list compact">
+        {
+            posts.map((post) => (
+                <a class="post-card" href={`/blog/${post.id}`}>
+                    <strong>{post.data.title}</strong>
+                    <time datetime={formatPostDate(post.data.date)}>
+                        {formatPostDate(post.data.date)}
+                    </time>
+                    {post.data.description && <span>{post.data.description}</span>}
+                </a>
+            ))
+        }
+    </div>
+</section>

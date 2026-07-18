@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatPostDate, getPublishedPosts } from '../../lib/posts';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title="Blog — Nikolay Lapa" description="Writing by Nikolay Lapa">
+    <a class="back-link" href="/">~ / home</a>
+    <div class="page-heading">
+        <h1>Blog</h1>
+    </div>
+    <div class="post-list">
+        {
+            posts.map((post) => (
+                <a class="post-card" href={`/blog/${post.id}`}>
+                    <strong>{post.data.title}</strong>
+                    <time datetime={formatPostDate(post.data.date)}>
+                        {formatPostDate(post.data.date)}
+                    </time>
+                    {post.data.description && <span>{post.data.description}</span>}
+                </a>
+            ))
+        }
+    </div>
+</BaseLayout>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import ExperienceEntry from '../components/ExperienceEntry.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { contacts, education, experience, profile, skills } from '../data/resume';
+import { formatDuration, formatMonth } from '../lib/dates';
+
+const educationPeriod = `${formatMonth(education.start)}–${formatMonth(education.end)}`;
+---
+
+<BaseLayout title={profile.name} description={profile.summary}>
+    <section>
+        <header class="section-header">
+            <h1>{profile.name}</h1>
+            <a href="/blog">blog →</a>
+        </header>
+        <p>{profile.summary}</p>
+    </section>
+
+    <section>
+        <SectionHeader title="Contacts && Links" />
+        <nav class="contacts" aria-label="Contact links">
+            {
+                contacts.map((contact) => (
+                    <a href={contact.url} target="_blank" rel="noreferrer">
+                        {contact.label}
+                    </a>
+                ))
+            }
+        </nav>
+    </section>
+
+    <section>
+        <SectionHeader title="Experience" />
+        {experience.map((entry) => <ExperienceEntry entry={entry} />)}
+    </section>
+
+    <BlogPreview />
+
+    <section>
+        <SectionHeader title="Education" />
+        <article class="experience-entry">
+            <div class="company-line">
+                <span class="company">{education.institution}</span><span>, </span>
+            </div>
+            <div class="role-block">
+                <strong class="role">{education.position}</strong>
+                <span class="dim">
+                    ({educationPeriod}), {formatDuration(education.start, education.end)}
+                </span>
+            </div>
+            <div class="entry-notes">
+                <div>{education.notes[0]}</div>
+                <div>
+                    <a href={education.thesisUrl} target="_blank" rel="noreferrer">
+                        Thesis (in Russian)
+                    </a>: {education.notes[1]}
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section>
+        <SectionHeader title="Skills" />
+        <ul class="terminal-list">
+            {
+                skills.map((skill) => (
+                    <li><strong>{skill.title} :: <span>{skill.text}</span></strong></li>
+                ))
+            }
+        </ul>
+    </section>
+</BaseLayout>

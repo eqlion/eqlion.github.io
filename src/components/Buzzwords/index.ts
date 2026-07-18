@@ -1,1 +1,0 @@
-export { Buzzwords } from './Buzzwords';

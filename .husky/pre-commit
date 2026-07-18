@@ -1,11 +1,5 @@
 #!/bin/sh
 
-echo "🕙 Running lint..."
-yarn lint-staged
-echo "✅ Lint done!"
-echo "🕙 Running typescript..."
-yarn typescript
-echo "✅ Typescript done!"
-echo "🕙 Running tests..."
-yarn test
-echo "✅ Tests done!"
+echo "🕙 Building site..."
+yarn build
+echo "✅ Build done!"
