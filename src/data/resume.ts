@@ -28,10 +28,10 @@ export const contacts = [
 ];
 
 export const selectedImpact = [
-    'Designed and delivered a reusable urgent-alert mechanism spanning iOS, Android, backend contracts, CMS, and silent-push refresh. It now supports three production use cases across approximately four teams and is maintained independently by two platform teams.',
-    'Led a server-driven redesign of the Tabby Card header across Swift, Go, TypeScript, and CMS. Reusable components were adopted by two additional teams, reducing content and layout iteration from up to two weeks to approximately 30 minutes.',
-    'Led architecture and delivery of multi-card provisioning across three teams and approximately seven engineers, enabling the Tabby Cash Card launch and Apple certification without migration incidents. Also led the Apple-required Wallet Extension from architecture through implementation and 100% iOS rollout.',
-    'Modernized Card Activation by removing approximately 31K lines of obsolete code and replacing two legacy modules with five layered modules, improving ownership boundaries, testability, and selective testing.',
+    'Designed and delivered a reusable urgent-alert mechanism spanning iOS, Android, backend contracts, CMS, and silent-push refresh. It now supports three production use cases across four teams and is maintained independently by two platform teams.',
+    'Led a server-driven redesign of the Tabby Card header across Swift, Go, TypeScript, and CMS. Reusable components were adopted by two additional teams, reducing content and layout iteration from up to two weeks to ~30 minutes.',
+    'Led architecture and delivery of multi-card provisioning across three teams and seven engineers, enabling the Tabby Cash Card launch and Apple certification without migration incidents. Also led the Apple-required Wallet Extension from architecture through implementation and 100% iOS rollout.',
+    'Modernized Card Activation by removing 31K+ lines of obsolete code and replacing two legacy modules with five layered modules, improving ownership boundaries, testability, and selective testing.',
     "Reduced the Money screen's time to meaningful content by 60%, from 1.70 seconds to 670 milliseconds, after profiling waterfall requests and making non-critical content load asynchronously.",
     'Mentored 5+ iOS, Android, and QA engineers, interviewed candidates, contributed performance feedback, and regularly reviewed and presented proposals through the mobile architecture committee.',
 ];
