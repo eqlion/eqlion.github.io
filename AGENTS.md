@@ -28,6 +28,8 @@ JavaScript.
 - `src/content.config.ts` - typed blog collection schema.
 - `src/data/resume.ts` - CV content and links.
 - `src/styles/global.css` - terminal theme and responsive layout.
+- `src/assets/social-card.svg` - editable source for the social preview card.
+- `public/social-card.png` - generated 1200 x 630 social preview image.
 - `public/fonts/` - regular and bold Fira Code assets.
 
 ## Development Commands
@@ -65,6 +67,20 @@ To add a post:
 
 Published posts are discovered, sorted newest-first, listed on `/blog`, and
 included in the latest-five homepage preview automatically.
+
+## Social Card
+
+Treat `src/assets/social-card.svg` as the source of truth. Keep it aligned with
+the Horizon colors in `src/styles/global.css`, then regenerate the PNG consumed
+by the site rather than editing `public/social-card.png` directly:
+
+```bash
+node --input-type=module -e "import sharp from 'sharp'; await sharp('src/assets/social-card.svg').png().toFile('public/social-card.png');"
+```
+
+Keep the exported PNG at exactly 1200 x 630 pixels and commit the SVG and PNG
+together. When the displayed name, role, or positioning changes, update both the
+card copy and its matching metadata in `src/layouts/BaseLayout.astro`.
 
 ## Style Conventions
 
